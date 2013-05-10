@@ -6,14 +6,14 @@ date:    2011-03-18 16:47
 ---
 {% include JB/setup %}
 
-# Abstract
-
 This article presents various methods of cut off communication channels between
 Erlang nodes and highlights benefits and disadvantages between these
 methods. All solutions mentioned try not to affect the behaviour of an Erlang
 node, but rather the communication (channels) between nodes. Furthermore, the
 described test methods are constructed for situations were multi-machine tests
 are not applicable or desirable.
+
+<!-- more -->
 
 # Introduction
 

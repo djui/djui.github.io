@@ -1,0 +1,2 @@
+Wrote an Applescript as Mail rule to auto report Twitter spammer, when receiving an "is now following you" email: http://djui.de/download/TwitterBlocker.scpt
+Wrote an Applescript to add skype contacts to the address book as telephone numbers: http://djui.de/download/Add%20Skype%20contacts%20to%20Address%20Book%20contacts.scpt

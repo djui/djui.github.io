@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.47pre0 r21549"
+   width="100%"
+   height="100%"
+   sodipodi:docname="Logo.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+  <metadata
+     id="metadata20">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="793"
+     inkscape:window-height="801"
+     id="namedview18"
+     showgrid="false"
+     inkscape:zoom="2.5371828"
+     inkscape:cx="132.94372"
+     inkscape:cy="935.44417"
+     inkscape:window-x="104"
+     inkscape:window-y="637"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <desc
+     id="desc4">Kreisquadratur Logo (c) Uwe Dauernheim 2004-2008</desc>
+  <defs
+     id="defs6">
+    <inkscape:path-effect
+       effect="curvestitching"
+       id="path-effect3614"
+       is_visible="true"
+       count="5"
+       startpoint_edge_variation="0;1"
+       startpoint_spacing_variation="0;1"
+       endpoint_edge_variation="0;1"
+       endpoint_spacing_variation="0;1"
+       strokepath="m -23,147.99242 45,0"
+       prop_scale="1"
+       scale_y_rel="false" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3606"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="sketch"
+       id="path-effect3604"
+       is_visible="true"
+       nbiter_approxstrokes="5"
+       strokelength="100"
+       strokelength_rdm="0.3;1"
+       strokeoverlap="0.3"
+       strokeoverlap_rdm="0.3;1"
+       ends_tolerance="0.1;1"
+       parallel_offset="5;1"
+       tremble_size="5;1"
+       tremble_frequency="5.5"
+       nbtangents="5"
+       tgt_places_rdmness="1;1"
+       tgtscale="10"
+       tgtlength="100"
+       tgtlength_rdm="0.3;1" />
+    <inkscape:path-effect
+       effect="sketch"
+       id="path-effect3601"
+       is_visible="true"
+       nbiter_approxstrokes="5"
+       strokelength="100"
+       strokelength_rdm="0.3;1"
+       strokeoverlap="0.3"
+       strokeoverlap_rdm="0.3;1"
+       ends_tolerance="0.1;1"
+       parallel_offset="5;1"
+       tremble_size="5;1"
+       tremble_frequency="7.51"
+       nbtangents="5"
+       tgt_places_rdmness="1;1"
+       tgtscale="10"
+       tgtlength="100"
+       tgtlength_rdm="0.3;1" />
+    <inkscape:path-effect
+       effect="sketch"
+       id="path-effect3599"
+       is_visible="true"
+       nbiter_approxstrokes="10"
+       strokelength="100"
+       strokelength_rdm="1;1"
+       strokeoverlap="0.3"
+       strokeoverlap_rdm="0.3;1"
+       ends_tolerance="0.1;1"
+       parallel_offset="5;1"
+       tremble_size="5;1"
+       tremble_frequency="6"
+       nbtangents="5"
+       tgt_places_rdmness="1;1"
+       tgtscale="10"
+       tgtlength="100"
+       tgtlength_rdm="0.6;1" />
+    <inkscape:path-effect
+       effect="ruler"
+       id="path-effect3595"
+       is_visible="true"
+       unit="px"
+       mark_distance="20"
+       mark_length="14"
+       minor_mark_length="7"
+       major_mark_steps="5"
+       shift="0"
+       offset="0"
+       mark_dir="left"
+       border_marks="both" />
+    <inkscape:path-effect
+       effect="knot"
+       id="path-effect3593"
+       is_visible="true"
+       interruption_width="3"
+       prop_to_stroke_width="true"
+       add_stroke_width="true"
+       add_other_stroke_width="true"
+       switcher_size="15"
+       crossing_points_vector="" />
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       id="perspective22" />
+    <style
+       type="text/css"
+       id="style8">
+			.neutral { fill: #000000; stroke-width: 0 }
+			.blue { fill: #005FA9; stroke-width: 0 }
+			.lemon { fill: #b7d625; stroke-width: 0 }
+			.orange { fill: #f88800; stroke-width: 0 }
+		</style>
+  </defs>
+  <path
+     style="fill:#46adff;stroke-width:0;fill-opacity:1"
+     id="path12"
+     d="m 152.37615,57.623846 23.33453,-23.334524 a 100,100 0 1 0 0,141.421358 l -23.33453,-23.33453 a 66,66 0 1 1 0,-94.752304"
+     inkscape:path-effect="" />
+  <path
+     transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,0,0)"
+     style="fill:#46adff;fill-opacity:1;stroke-width:0"
+     d="m -23,125.49242 45,0 0,45 -45,0 0,-45 z"
+     id="rect14"
+     inkscape:path-effect="#path-effect3614"
+     inkscape:original-d="m -23,125.49242 45,0 0,45 -45,0 0,-45 z" />
+  <path
+     transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,0,0)"
+     style="fill:#46adff;fill-opacity:1;stroke-width:0"
+     d="m 10,158.49243 90,0 0,90 -90,0 0,-90 z"
+     id="rect16"
+     inkscape:path-effect="" />
+</svg>

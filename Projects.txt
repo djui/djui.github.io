@@ -1,0 +1,10 @@
+SpotifyFS
+SunBeam
+SongFinder
+BrainBranch
+New Blog (TeX, CouchDB)
+EtherTeX
+RelaxMode
+Peer2Peer Review
+Kompics Communication visualizer
+Erlang SPDY http://sites.google.com/a/chromium.org/dev/spdy/spdy-protocol

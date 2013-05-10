@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Blog</title>
+    <link rel="stylesheet" href="./css/screen.css" type="text/css"/>
+  </head>
+  <body>
+    <h1>Blog</h1>
+    <p>Tiny Blog using {Sammy,Node}JS</p>
+    <p class="hint">Note: Still under construction</p>
+    
+    <div id="main"></div>
+    
+    <p id="footer">Created by Uwe Dauernheim at <a href="http://djui.de">http://djui.de</a></p>
+    
+    <!-- The trick to get global funs -->
+    <script type="text/javascript">exports = {};</script>
+    <!-- Preserve order! Frameworks first, then libraries, then app -->
+    <script type="text/javascript" src="./js/vendor/jquery.js"></script>
+    <script type="text/javascript" src="./js/vendor/sammy.js"></script>
+    <script type="text/javascript" src="./js/vendor/sammy.mustache.js"></script>
+    <script type="text/javascript" src="./js/vendor/sammy.nested_params.js"></script>
+    <script type="text/javascript" src="./js/vendor/sammy.storage.js"></script>
+    <script type="text/javascript" src="./js/vendor/jquery.json-2.2.min.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+  </body>
+</html>

@@ -1,3 +1,7 @@
+/******************************************************************************/
+/* Theme djui style                                                           */
+/******************************************************************************/
+
 @font-face {
     font-family: "Inconsolata";
     font-style: normal;
@@ -94,19 +98,73 @@ body {
     line-height: 1.8;
 }
 
-code, pre {
-    font-family: "Inconsolata", Monaco, Menlo, Consolas, "Courier New", monospace;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 1em;
+h1, h2, h3, h4, h5, h6 {
+    text-shadow: 0 1px 0 #ccc;
+}
+
+a {
+    color: #46adff;
 }
 
 li {
     line-height: 1.5;
 }
 
+code, kbd {
+    color: #000;
+}
+
+code, pre, kbd {
+    font-family: "Inconsolata", Monaco, Menlo, Consolas, "Courier New", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1em;
+}
+
+kbd {
+    padding: 2px 4px;
+    background-color: #f7f7f9;
+    border: 1px outset #e1e1e8;
+    white-space: nowrap;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#push {
+    height: 60px;
+}
+
+footer {
+    height: 60px;
+    background-color: #f5f5f5;
+}
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 700px) {
+    footer {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.container > .credit {
+    margin: 20px 20px;
+}
+
+.credit > a {
+    color: #999;
+}
+
+/******************************************************************************/
+/* Jekyll Bootstrap style                                                     */
+/******************************************************************************/
+
 /* Custom container */
 .container-narrow {
+  padding: 0 10px;
   margin: 0 auto;
   max-width: 700px; }
 
@@ -130,7 +188,6 @@ li {
   margin: 10px 0;
   text-align: left; }
 
-/* post-full*/
-.post-full .date {
+.post > .date {
   margin-bottom: 20px;
   font-weight: bold; }

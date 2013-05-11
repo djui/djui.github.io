@@ -8,27 +8,26 @@ title: Djui's Blog
 <div class="posts">
   
   {% for post in site.posts %}
-  <div class="row-fluid post-full">
-    <div class="span12">
-      <h1 class="entry-title">
-        <a href="{{ BASE_PATH }}{{ post.url }}" rel="bookmark">{{ post.title }}</a>
-      </h1>
-      <div class="date">
-        <span>{{ post.date | date_to_long_string }}</span>
-      </div>
+  <div class="post">
+    <h1 class="entry-title">
+      <a href="{{ BASE_PATH }}{{ post.url }}" rel="bookmark">{{ post.title }}</a>
+    </h1>
+    <div class="date">
+      <span>{{ post.date | date_to_long_string }}</span>
     </div>
-
-    {% assign parts = post.content | split:"<!-- more -->" %}
-    {% if parts | count > 1 %}
-        {{ parts | first }}
-        <a href="{{ post.url }}">Continue &raquo;</a>
-    {% else %}
-        {{ post.content }}
-    {% endif %}
-
-  </article>
+    
+    <article>
+      {% assign parts = post.content | split:"<!-- more -->" %}
+      {% if parts | count > 1 %}
+          {{ parts | first }}
+          <div class="more"><a href="{{ post.url }}">Continue &raquo;</a></div>
+      {% else %}
+          {{ post.content }}
+      {% endif %}
+    </article>
+  </div>
   {% endfor %}
-
+  
   <!-- links to prev and next pages for browsing thru archives -->
   {% if paginator.previous_page == 1 %}
       <span id="newer"><a href="/">&laquo;&laquo; Newer Entries</a></span>

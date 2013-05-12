@@ -30,6 +30,8 @@
       </ul>
   {% endunless %}
       
+  <a class="twitter-share-button" href="https://twitter.com/share?dnt&via={{ site.author.twitter }}&text={{ page.title | cgi_escape }}&url={{ page.url | cgi_escape }}&hashtags={{ page.tags | join:"," | cgi_escape }}" target="_blank">Tweet</a>
+
   <div class="pagination">
     <ul>
       {% if page.previous %}

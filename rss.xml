@@ -10,6 +10,7 @@ title : RSS Feed
         <description>{{ site.title }} - {{ site.author.name }}</description>
         <link>{{ site.production_url }}{{ site.rss_path }}</link>
         <link>{{ site.production_url }}</link>
+        <link>https://flattr.com/submit/auto?url=https%3A%2F%2Fdevelopers.flattr.net%2F&amp;user_id={{ site.author.flattr }}</link>
         <lastBuildDate>{{ site.time | date_to_xmlschema }}</lastBuildDate>
         <pubDate>{{ site.time | date_to_xmlschema }}</pubDate>
         <ttl>1800</ttl>

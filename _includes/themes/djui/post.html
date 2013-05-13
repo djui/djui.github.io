@@ -38,6 +38,7 @@
     {% endunless %}
     <a class="btn btn-inverse btn-mini twitter-share-button" href="https://twitter.com/share?dnt&via={{ site.author.twitter }}&text={{ page.title | cgi_escape }}&url={{ abs_url | cgi_escape }}&hashtags={{ page.tags | join: "," | replace: " ", "_" | cgi_escape }}" target="_blank"><i class="icon-twitter"></i>&nbsp;<strong>Tweet</strong></a>
     <a class="btn btn-inverse btn-mini adn-share-button" href="https://alpha.app.net/intent/post/?text={{ page.title | append: " " | append: abs_url | append: adn_tags | append: adn_via | cgi_escape }}" target="_blank"><i class="icon-adn">&alpha;</i>&nbsp;<strong>Post</strong></a>
+    <a class="btn btn-inverse btn-mini flattr-share-button" href="https://flattr.com/submit/auto?user_id={{ site.author.flattr }}&url={{ abs_url | cgi_escape }}&title={{ page.title | cgi_escape }}&tags={{ page.tags | join: "," | replace: " ", "_" | cgi_escape }}&category=text" target="_blank"><img src="https://flattr.com/_img/icons/flattr_logo_16.png" width="14px" heigh="14px" class="grayscale" />&nbsp;<strong>Flattr</strong></a>
   </div>
   
   <div class="pagination">

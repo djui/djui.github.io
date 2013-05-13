@@ -8,6 +8,7 @@ title : Atom Feed
  <title>{{ site.title }}</title>
  <link href="{{ site.production_url }}/{{ site.atom_path }}" rel="self"/>
  <link href="{{ site.production_url }}"/>
+ <link href="https://flattr.com/submit/auto?url=https%3A%2F%2Fdevelopers.flattr.net%2F&amp;user_id={{ site.author.flattr }}" rel="payment" type="text/html" />
  <updated>{{ site.time | date_to_xmlschema }}</updated>
  <id>{{ site.production_url }}</id>
  <author>

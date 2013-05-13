@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="241"
+   height="200"
+   viewBox="0 0 241 200">
+  <desc>Kreisquadratur Logo (c) Uwe Dauernheim 2004-2013</desc>
+  <path
+     d="m 147.37615,52.623845 23.33453,-23.334524 a 100,100 0 1 0 0,141.421359 l -23.33453,-23.33453 a 66,66 0 1 1 0,-94.752305"
+     id="circle"
+     style="fill:#46adff;fill-opacity:1;stroke-width:0" />
+  <path
+     d="M 67.473082,99.999996 99.292887,68.180191 131.11269,99.999996 99.292887,131.8198 67.473082,99.999996 z"
+     id="rect_small"
+     style="fill:#46adff;fill-opacity:1;stroke-width:0" />
+  <path
+     d="M 114.14214,100 177.78175,36.360393 241.42136,100 177.78175,163.63961 114.14214,100 z"
+     id="rect_large"
+     style="fill:#46adff;fill-opacity:1;stroke-width:0" />
+</svg>

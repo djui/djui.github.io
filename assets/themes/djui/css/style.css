@@ -131,6 +131,10 @@ kbd {
     border-radius: 3px;
 }
 
+a.brand > img {
+    vertical-align: baseline;
+}
+
 ul.tag_box,
 ol.tag_box {
     margin-bottom: 3px;

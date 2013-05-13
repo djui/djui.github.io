@@ -3,9 +3,6 @@
 </div>
 
 <div class="post row-fluid">
-  <div class="date">
-    <span>{{ page.date | date_to_long_string }}</span>
-  </div>
   <div class="content">
     <article>
       {{ content }}
@@ -13,6 +10,8 @@
   </div>
   
   <hr />
+  
+  <i class="icon-calendar"></i> <span title="{{ page.date }}" class="label label-inverse">{{ page.date | date_to_long_string }}</span>
   
   {% unless page.categories == empty %}
       <ul class="tag_box inline">
@@ -30,8 +29,12 @@
       </ul>
   {% endunless %}
       
-  <a class="twitter-share-button" href="https://twitter.com/share?dnt&via={{ site.author.twitter }}&text={{ page.title | cgi_escape }}&url={{ page.url | cgi_escape }}&hashtags={{ page.tags | join:"," | cgi_escape }}" target="_blank">Tweet</a>
-
+  <div class="share">
+    <i class="icon-share"></i>
+    {% assign abs_url = site.production_url | append: page.url %}
+    <a class="btn btn-inverse btn-mini twitter-share-button" href="https://twitter.com/share?dnt&via={{ site.author.twitter }}&text={{ page.title | cgi_escape }}&url={{ abs_url | cgi_escape }}&hashtags={{ page.tags | join: "," | replace: " ", "_" | cgi_escape }}" target="_blank"><i class="icon-twitter"></i>&nbsp;<strong>Tweet</strong></a>
+  </div>
+  
   <div class="pagination">
     <ul>
       {% if page.previous %}

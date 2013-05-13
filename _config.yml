@@ -30,8 +30,8 @@ tagline: 'Djui''s Blog'
 author:
   name: Uwe Dauernheim
   email: uwe@dauernheim.net
-  github: djui
   twitter: uwe_
+  github: djui
   linkedin: uwedauernheim
 
 paginate: 6

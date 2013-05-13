@@ -32,7 +32,12 @@
   <div class="share">
     <i class="icon-share"></i>
     {% assign abs_url = site.production_url | append: page.url %}
+    {% assign adn_via = append: site.author.adn | prepend: " via @" %}
+    {% unless page.tags == empty %}
+    {% assign adn_tags = page.tags | join: "#" | replace: " ", "_" | prepend: " #" %}
+    {% endunless %}
     <a class="btn btn-inverse btn-mini twitter-share-button" href="https://twitter.com/share?dnt&via={{ site.author.twitter }}&text={{ page.title | cgi_escape }}&url={{ abs_url | cgi_escape }}&hashtags={{ page.tags | join: "," | replace: " ", "_" | cgi_escape }}" target="_blank"><i class="icon-twitter"></i>&nbsp;<strong>Tweet</strong></a>
+    <a class="btn btn-inverse btn-mini adn-share-button" href="https://alpha.app.net/intent/post/?text={{ page.title | append: " " | append: abs_url | append: adn_tags | append: adn_via | cgi_escape }}" target="_blank"><i class="icon-adn">&alpha;</i>&nbsp;<strong>Post</strong></a>
   </div>
   
   <div class="pagination">

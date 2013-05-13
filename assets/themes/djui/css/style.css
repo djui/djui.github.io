@@ -145,6 +145,15 @@ ol.tag_box>li {
     color: #4099ff;
 }
 
+i.icon-adn {
+    font-weight: bold;
+    font-size: 1.4em;
+}
+
+.adn-share-button:hover {
+    color: #ce5640;
+}
+
 #push {
     height: 60px;
 }

@@ -1,0 +1,1 @@
+# KTH OSX folder icon

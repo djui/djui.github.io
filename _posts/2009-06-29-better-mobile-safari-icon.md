@@ -1,0 +1,1 @@
+# Better Mobile Safari icon

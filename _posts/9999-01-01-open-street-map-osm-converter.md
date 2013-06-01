@@ -1,0 +1,3 @@
+OSM to csv / sqlite conversion
+
+For my iOS/Obj-C learning project I used a shopping app...

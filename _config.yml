@@ -5,6 +5,7 @@ permalink: /:categories/:year/:month/:day/:title
 exclude: ["Rakefile", "Gemfile", "Gemfile.lock"]
 pygments: true
 future: false
+searchindex: yes
 lsi: true
 timezone: Europe/Stockholm
 markdown: redcarpet
@@ -36,6 +37,8 @@ author:
   linkedin: uwedauernheim
   flattr: djui
   gittip: djui
+
+excerpt_separator: "\n<!-- more -->\n"
 
 paginate: 6
 

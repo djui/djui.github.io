@@ -82,24 +82,44 @@
     font-weight:700;
 }
 
+@font-face {
+    font-family: "Varela Round";
+    font-style: normal;
+    font-weight: 400;
+    src: local('Varela Round'), local('VarelaRound-Regular'), url(http://themes.googleusercontent.com/static/fonts/varelaround/v3/APH4jr0uSos5wiut5cpjrqRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
+}
+
 body {
     /* http://www.vagrantup.com/ */
     font-family: "MuseoSans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 300;
     /* http://thenextweb.com/ */
-    /*
+/*
     font-family: "BentonSans", helvetica, arial, sans-serif;
     font-weight: 400;
-    */
+*/
+/*
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 400;
+*/
     font-style: normal;
     font-size: 1em;
     font-smooth: always;
     -webkit-font-smoothing: subpixel-antialiased;
+    text-rendering: optimizeLegibility;
     line-height: 1.8;
 }
 
 h1, h2, h3, h4, h5, h6 {
     text-shadow: 0 1px 0 #ccc;
+    color: #311e1b;
+}
+
+h1::before {
+    content: "#";
+    opacity: 0.7;
+    margin-left: -1em;
+    margin-right: 0.2em;
 }
 
 a {
@@ -108,6 +128,29 @@ a {
 
 li {
     line-height: 1.5;
+}
+
+.header {
+    /* -webkit-transform: rotateX(180deg) */
+    perspective: 100px;
+    -webkit-perspective: 100px;
+    -moz-perspective: 100px;
+    -ms-perspective: 100px;
+    -o-perspective: 100px;
+}
+
+article {
+    /*
+    column-width: 12em;
+    column-count: auto;
+    column-gap: 2em;
+    -webkit-column-width: 12em;
+    -webkit-column-count: auto;
+    -webkit-column-gap: 2em;
+    -moz-column-width: 12em;
+    -moz-column-count: auto;
+    -moz-column-gap: 2em;
+    */
 }
 
 code, kbd {
@@ -129,6 +172,10 @@ kbd {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
+}
+
+a.brand {
+    color: #46adff !important;
 }
 
 a.brand > img {

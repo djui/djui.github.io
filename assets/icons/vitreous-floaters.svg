@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <radialGradient id="glow" cx="44%" cy="40%" r="75%">
+      <stop offset="0" stop-color="#fff3d6"/>
+      <stop offset="0.28" stop-color="#ffc77a"/>
+      <stop offset="0.62" stop-color="#ee7a35"/>
+      <stop offset="1" stop-color="#8f2a14"/>
+    </radialGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <clipPath id="tile"><rect width="1024" height="1024" rx="228"/></clipPath>
+  </defs>
+  <g clip-path="url(#tile)">
+    <rect width="1024" height="1024" fill="url(#glow)"/>
+    <g fill="none" stroke="#6b2412" stroke-linecap="round" filter="url(#soft)">
+      <path d="M210 640 C 300 560, 360 700, 450 620 S 600 520, 650 600 S 760 700, 830 610" stroke-width="22" stroke-opacity="0.42"/>
+      <path d="M300 300 C 360 250, 420 330, 480 280 S 560 230, 600 290" stroke-width="14" stroke-opacity="0.32"/>
+      <circle cx="690" cy="340" r="46" stroke-width="12" stroke-opacity="0.38"/>
+      <circle cx="745" cy="400" r="22" stroke-width="9" stroke-opacity="0.3"/>
+      <circle cx="330" cy="460" r="30" stroke-width="10" stroke-opacity="0.32"/>
+    </g>
+    <g fill="#6b2412" filter="url(#soft)">
+      <circle cx="560" cy="760" r="14" fill-opacity="0.35"/>
+      <circle cx="600" cy="790" r="9" fill-opacity="0.3"/>
+      <circle cx="420" cy="380" r="10" fill-opacity="0.28"/>
+    </g>
+  </g>
+</svg>

@@ -177,6 +177,18 @@ a.card:hover { border-color: var(--border-2); }
 .tags { display: flex; flex-wrap: wrap; gap: 4px; }
 .tag { font-size: 11.5px; padding: 2px 8px; border-radius: 999px; background: var(--surface-2); color: var(--text-2); }
 
+.spotlight {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); align-items: center; gap: 32px;
+  margin-top: 56px; padding: 32px; border-radius: 20px; text-decoration: none; color: inherit;
+  background: var(--surface); border: 1px solid var(--border); transition: border-color 0.2s ease;
+}
+.spotlight:hover { border-color: var(--border-2); }
+.spotlight .eyebrow { font: 500 13px var(--sans); text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-3); margin: 0 0 12px; }
+.spotlight h2 { font: 400 clamp(28px, 3.6vw, 40px)/1.1 var(--serif); margin: 0 0 14px; letter-spacing: -0.01em; }
+.spotlight h2 em { font-style: italic; color: #d4462f; }
+.spotlight p { margin: 0 0 18px; color: var(--text-2); font-size: 16px; max-width: 42ch; }
+.spotlight .cta { font-size: 14px; font-weight: 500; color: var(--accent); }
+.spotlight img { width: 100%; height: auto; aspect-ratio: 1200 / 630; object-fit: cover; border-radius: 12px; border: 1px solid var(--border); display: block; }
 .experiments { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
 .experiments h2 { font: 500 13px var(--sans); text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-3); margin: 0 0 12px; }
 .experiments ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 28px; }
@@ -192,6 +204,7 @@ footer a { color: var(--text-2); text-decoration: none; }
   .career { position: static; }
   .featured { grid-template-columns: 1fr; }
   .feat .stage { height: 140px; }
+  .spotlight { grid-template-columns: 1fr; padding: 24px; gap: 20px; }
 }
 @media (max-width: 560px) {
   .wrap { padding: 0 16px; }
@@ -258,9 +271,8 @@ footer a { color: var(--text-2); text-decoration: none; }
     <aside class="career" aria-labelledby="career-h">
       <h2 id="career-h">Career</h2>
       <ol>
-        <li><span class="logo" aria-hidden="true">·</span><span><span class="role">Sabbatical</span><span class="org">Training, travel, AI research</span><span class="yr">2026 – now</span></span></li>
         <li><span class="logo"><img src="assets/logos/aris-machina.png" alt="" width="36" height="36"></span><span><span class="role">Head of Engineering</span><span class="org">Aris Machina · AI</span><span class="yr">2025 – 2026</span></span></li>
-        <li><span class="logo"><img src="assets/logos/northvolt.png" alt="" width="36" height="36"></span><span><span class="role">Senior Engineering Manager</span><span class="org">Northvolt · manufacturing systems, data</span><span class="yr">2023 – 2025</span></span></li>
+        <li><span class="logo" style="background:#fff"><img src="assets/logos/northvolt.png" alt="" width="36" height="36"></span><span><span class="role">Senior Engineering Manager</span><span class="org">Northvolt · manufacturing systems, data</span><span class="yr">2023 – 2025</span></span></li>
         <li><span class="logo"><img src="assets/logos/grace-health.png" alt="" width="36" height="36"></span><span><span class="role">Head of Technology</span><span class="org">Grace Health · women’s health</span><span class="yr">2020 – 2023</span><span class="earlier">Engineering Manager before that</span></span></li>
         <li><span class="logo"><img src="assets/logos/voi.png" alt="" width="36" height="36"></span><span><span class="role">VP of Software Engineering</span><span class="org">Voi · urban mobility</span><span class="yr">2019 – 2020</span><span class="earlier">Backend Engineering Lead before that</span></span></li>
         <li><span class="logo"><img src="assets/logos/pfc.png" alt="" width="36" height="36"></span><span><span class="role">Lead Technical Architect</span><span class="org">P.F.C. Personal Finance Co. · fintech</span><span class="yr">2016 – 2019</span></span></li>
@@ -282,6 +294,15 @@ footer a { color: var(--text-2); text-decoration: none; }
     <div class="featured" id="featured"></div>
     <div class="filters" id="filters" role="group" aria-label="Filter by platform"></div>
     <div class="grid" id="grid"><noscript><p>Turn on JavaScript to see the apps, or browse <a href="https://github.com/djui?tab=repositories">my repositories</a>.</p></noscript></div>
+    <a class="spotlight" href="https://havewecuredcanceryet.org">
+      <div>
+        <p class="eyebrow">Side project</p>
+        <h2>Have we cured cancer yet? <em>No.</em></h2>
+        <p>A running, sourced log of what we point AI at instead of cancer, next to the work that does move the needle. Not anti-AI. Pro-aim.</p>
+        <span class="cta">Read the log →</span>
+      </div>
+      <img src="https://havewecuredcanceryet.org/og.png" alt="Preview of havewecuredcanceryet.org" loading="lazy" width="1200" height="630">
+    </a>
     <div class="experiments" id="experiments"></div>
   </section>
 

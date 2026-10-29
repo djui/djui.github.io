@@ -113,6 +113,8 @@ main > section, .footer { max-width: var(--max); margin: 0 auto; padding-left: v
 .proof-logos { display: flex; flex-wrap: wrap; gap: 12px; }
 .proof-logos li { width: 32px; height: 32px; border-radius: 8px; overflow: hidden; }
 .proof-logos img { width: 100%; height: 100%; object-fit: cover; }
+.proof-logos a { display: block; width: 100%; height: 100%; transition: transform 300ms var(--ease); }
+.proof-logos a:hover { transform: scale(1.08); }
 .on-white, .proof-logos .on-white { background: #ffffff; }
 
 .hero-visual { margin: 0; }
@@ -129,6 +131,9 @@ main > section, .footer { max-width: var(--max); margin: 0 auto; padding-left: v
 .career { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-big); padding: 24px; }
 .career-list li { display: grid; grid-template-columns: 40px minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 12px 0; border-top: 1px solid var(--border); }
 .career-list li:first-child { border-top: 0; padding-top: 0; }
+.career-row { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; gap: inherit; align-items: center; margin: -6px -8px; padding: 6px 8px; border-radius: 12px; text-decoration: none; transition: background-color 300ms var(--ease); }
+.career-row:hover { background: var(--surface-2); }
+.career-row:hover .role { text-decoration: underline; text-underline-offset: 3px; }
 .career-list img { width: 40px; height: 40px; border-radius: 8px; object-fit: cover; }
 .career-list .role { font-size: 14px; line-height: 20px; font-weight: 600; }
 .career-list .org { font-size: 14px; line-height: 20px; color: var(--text-2); }
@@ -241,6 +246,7 @@ a.card:active { transform: scale(0.98); }
 .faq summary::-webkit-details-marker { display: none; }
 .faq summary i { font-size: 20px; color: var(--text-3); transition: transform 500ms var(--ease); }
 .faq details[open] summary i { transform: rotate(45deg); }
+.faq details p a { color: var(--link, var(--text)); }
 .faq details p { padding-bottom: 24px; color: var(--text-2); max-width: 680px; }
 
 /* Final CTA */
@@ -250,6 +256,7 @@ a.card:active { transform: scale(0.98); }
   background: linear-gradient(90deg, var(--h-from), var(--h-to)); -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 .final-sub { color: var(--text-2); font-size: 18px; line-height: 28px; margin-bottom: 32px; }
+.final-actions { justify-content: center; margin-bottom: 0; }
 
 /* Footer */
 .footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; padding-top: 32px; padding-bottom: 48px; border-top: 1px solid var(--border); font-size: 14px; line-height: 20px; color: var(--text-3); }

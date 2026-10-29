@@ -1,387 +1,186 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light" data-root="">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Uwe Dauernheim</title>
-<meta name="description" content="Uwe Dauernheim: software engineer, engineering leader, and lifelong builder in Stockholm. About me, my career, and the apps I make for Mac, iPhone, and the web.">
+<title>Uwe Dauernheim · Engineering leader in Stockholm</title>
+<meta name="description" content="Uwe Dauernheim leads engineering teams and builds software that makes difficult things useful. Sixteen years across Klarna, Spotify, Voi, Grace Health, Northvolt and Aris Machina, plus 21 apps for Mac, iPhone and the web.">
 <meta property="og:title" content="Uwe Dauernheim">
 <meta property="og:description" content="Curious by nature. Driven by people. Grounded in purpose.">
+<meta property="og:type" content="profile">
 <meta property="og:url" content="https://djui.github.io/">
-<meta name="color-scheme" content="light dark">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
-<style>
-:root {
-  --bg: #faf9f6;
-  --surface: #ffffff;
-  --surface-2: #f2f0eb;
-  --text: #1c1b19;
-  --text-2: #5c5a55;
-  --text-3: #8f8c85;
-  --border: rgba(28, 27, 25, 0.1);
-  --border-2: rgba(28, 27, 25, 0.18);
-  --accent: #3a5bd9;
-  --serif: "Newsreader", Georgia, serif;
-  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --tint-mix: 13%;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #141412;
-    --surface: #1c1c1a;
-    --surface-2: #242421;
-    --text: #ecebe6;
-    --text-2: #a9a69f;
-    --text-3: #77746e;
-    --border: rgba(236, 235, 230, 0.1);
-    --border-2: rgba(236, 235, 230, 0.2);
-    --accent: #8aa2ff;
-    --tint-mix: 22%;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #141412;
-  --surface: #1c1c1a;
-  --surface-2: #242421;
-  --text: #ecebe6;
-  --text-2: #a9a69f;
-  --text-3: #77746e;
-  --border: rgba(236, 235, 230, 0.1);
-  --border-2: rgba(236, 235, 230, 0.2);
-  --accent: #8aa2ff;
-  --tint-mix: 22%;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font: 16px/1.65 var(--sans);
-  -webkit-font-smoothing: antialiased;
-}
-a { color: inherit; }
-.wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
-header.top {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 20px 0; font-size: 14px;
-}
-header.top .name { font-weight: 600; text-decoration: none; }
-header.top nav { display: flex; gap: 20px; }
-header.top nav a { color: var(--text-2); text-decoration: none; }
-header.top nav a:hover { color: var(--text); }
-
-.hero { display: flex; gap: 32px; align-items: flex-start; padding: 56px 0 64px; border-bottom: 1px solid var(--border); }
-.portrait {
-  width: 112px; height: 112px; border-radius: 50%; flex: none;
-  background: var(--surface-2); color: var(--text-2);
-  display: flex; align-items: center; justify-content: center;
-  font: 500 32px var(--serif); overflow: hidden;
-}
-.portrait img { width: 100%; height: 100%; object-fit: cover; }
-.hero h1 {
-  font: 400 clamp(34px, 5.4vw, 56px)/1.08 var(--serif);
-  letter-spacing: -0.015em; margin: 0 0 18px; max-width: 16ch;
-}
-.hero .intro { font-size: 19px; color: var(--text-2); margin: 0 0 24px; max-width: 46ch; }
-.links { display: flex; flex-wrap: wrap; gap: 8px; }
-.links a {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: 14px; text-decoration: none; padding: 6px 12px;
-  border: 1px solid var(--border-2); border-radius: 999px; color: var(--text);
-}
-.links a:hover { background: var(--surface-2); }
-.links a.ghost { border-color: transparent; color: var(--accent); }
-.links svg { width: 15px; height: 15px; }
-
-.about { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 64px; padding: 64px 0 72px; border-bottom: 1px solid var(--border); }
-.prose { max-width: 62ch; }
-.prose p { margin: 0 0 18px; font-size: 17px; }
-.prose h2 { font: 500 13px var(--sans); text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-3); margin: 48px 0 14px; }
-.prose blockquote {
-  margin: 28px 0; padding: 0 0 0 20px; border-left: 2px solid var(--border-2);
-  font: 400 24px/1.35 var(--serif); color: var(--text);
-}
-.prose .bridge { font-size: 15px; color: var(--text-2); margin-top: 32px; }
-.prose .bridge a { color: var(--accent); text-decoration: none; }
-
-.career { align-self: start; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 22px; }
-.career h2 { font: 500 13px var(--sans); text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-3); margin: 0 0 16px; }
-.career ol { list-style: none; margin: 0; padding: 0; }
-.career li { display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 12px; padding: 12px 0; border-top: 1px solid var(--border); font-size: 14px; line-height: 1.45; }
-.career li:first-child { border-top: 0; padding-top: 0; }
-.career .logo {
-  width: 36px; height: 36px; border-radius: 8px; overflow: hidden;
-  display: flex; align-items: center; justify-content: center;
-  background: var(--surface-2); color: var(--text-2); font: 600 10px var(--sans); letter-spacing: 0.02em;
-}
-.career .logo img { width: 100%; height: 100%; object-fit: cover; }
-.career .role { font-weight: 500; display: block; }
-.career .org { color: var(--text-2); display: block; }
-.career .yr { color: var(--text-3); font-size: 12.5px; font-variant-numeric: tabular-nums; display: block; }
-.career .earlier { display: block; color: var(--text-3); font-size: 12.5px; }
-.career .more { display: block; margin-top: 14px; font-size: 13px; color: var(--accent); text-decoration: none; }
-
-.apps { padding: 72px 0 40px; }
-.apps-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 8px; }
-.apps-head h2 { font: 400 40px/1.1 var(--serif); margin: 0; letter-spacing: -0.01em; }
-.apps-head p { margin: 0; color: var(--text-2); font-size: 15px; }
-
-.featured { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 28px 0 48px; }
-.feat {
-  display: flex; flex-direction: column; text-decoration: none; color: inherit;
-  background: var(--surface); border: 1px solid var(--border); border-radius: 20px; overflow: hidden;
-  transition: transform 0.2s ease, border-color 0.2s ease;
-}
-a.feat:hover { transform: translateY(-2px); border-color: var(--border-2); }
-.feat .stage {
-  height: 180px; display: flex; align-items: center; justify-content: center;
-  background: color-mix(in srgb, var(--tint) var(--tint-mix), var(--surface));
-}
-.feat .stage .icon { width: 104px; height: 104px; border-radius: 24px; font-size: 44px; }
-.feat .body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
-.feat h3 { margin: 0; font-size: 18px; font-weight: 600; }
-.feat p { margin: 0; font-size: 14px; color: var(--text-2); line-height: 1.5; flex: 1; }
-.feat .meta { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; }
-.feat .cta { font-size: 13px; font-weight: 500; color: var(--accent); }
-
-.icon {
-  width: 52px; height: 52px; border-radius: 13px; flex: none; overflow: hidden;
-  display: flex; align-items: center; justify-content: center;
-  background: var(--tint); color: #fff; font: 500 22px var(--serif);
-}
-.icon img { width: 100%; height: 100%; object-fit: cover; }
-.icon.has-img { background: transparent; }
-
-.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
-.filters button {
-  font: 500 13px var(--sans); padding: 6px 14px; border-radius: 999px; cursor: pointer;
-  background: transparent; color: var(--text-2); border: 1px solid var(--border-2);
-}
-.filters button:hover { color: var(--text); }
-.filters button[aria-pressed="true"] { background: var(--text); color: var(--bg); border-color: var(--text); }
-.filters .n { opacity: 0.6; margin-left: 4px; font-variant-numeric: tabular-nums; }
-
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
-.card {
-  display: flex; gap: 14px; align-items: flex-start; padding: 16px; text-decoration: none; color: inherit;
-  background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
-  transition: border-color 0.15s ease;
-}
-a.card:hover { border-color: var(--border-2); }
-.card h3 { margin: 0; font-size: 15px; font-weight: 600; }
-.card p { margin: 2px 0 8px; font-size: 13.5px; color: var(--text-2); line-height: 1.45; }
-.tags { display: flex; flex-wrap: wrap; gap: 4px; }
-.tag { font-size: 11.5px; padding: 2px 8px; border-radius: 999px; background: var(--surface-2); color: var(--text-2); }
-
-.spotlight {
-  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); align-items: center; gap: 32px;
-  margin-top: 56px; padding: 32px; border-radius: 20px; text-decoration: none; color: inherit;
-  background: var(--surface); border: 1px solid var(--border); transition: border-color 0.2s ease;
-}
-.spotlight:hover { border-color: var(--border-2); }
-.spotlight .eyebrow { font: 500 13px var(--sans); text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-3); margin: 0 0 12px; }
-.spotlight h2 { font: 400 clamp(28px, 3.6vw, 40px)/1.1 var(--serif); margin: 0 0 14px; letter-spacing: -0.01em; }
-.spotlight h2 em { font-style: italic; color: #d4462f; }
-.spotlight p { margin: 0 0 18px; color: var(--text-2); font-size: 16px; max-width: 42ch; }
-.spotlight .cta { font-size: 14px; font-weight: 500; color: var(--accent); }
-.spotlight img { width: 100%; height: auto; aspect-ratio: 1200 / 630; object-fit: cover; border-radius: 12px; border: 1px solid var(--border); display: block; }
-.experiments { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--border); }
-.experiments h2 { font: 500 13px var(--sans); text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-3); margin: 0 0 12px; }
-.experiments ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 28px; }
-.experiments a { text-decoration: none; font-size: 15px; }
-.experiments a:hover span:first-child { text-decoration: underline; }
-.experiments .sub { color: var(--text-3); margin-left: 8px; font-size: 14px; }
-
-footer { padding: 40px 0 56px; font-size: 13px; color: var(--text-3); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-footer a { color: var(--text-2); text-decoration: none; }
-
-@media (max-width: 860px) {
-  .about { grid-template-columns: 1fr; gap: 40px; }
-  .career { position: static; }
-  .featured { grid-template-columns: 1fr; }
-  .feat .stage { height: 140px; }
-  .spotlight { grid-template-columns: 1fr; padding: 24px; gap: 20px; }
-}
-@media (max-width: 560px) {
-  .wrap { padding: 0 16px; }
-  .hero { flex-direction: column; gap: 20px; padding: 32px 0 44px; }
-  .portrait { width: 84px; height: 84px; font-size: 26px; }
-  .hero .intro { font-size: 17px; }
-  header.top nav { gap: 14px; }
-  .grid { grid-template-columns: 1fr; }
-  .apps-head h2 { font-size: 32px; }
-  .prose blockquote { font-size: 21px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .feat, .card { transition: none; }
-  a.feat:hover { transform: none; }
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" rel="stylesheet">
+<link href="assets/site/site.css" rel="stylesheet">
 </head>
 <body>
-<div class="wrap">
-  <header class="top">
-    <a class="name" href="#">Uwe Dauernheim</a>
-    <nav><a href="#about">About</a><a href="#apps">Apps</a></nav>
-  </header>
+<a class="skip" href="#main">Skip to content</a>
 
-  <section class="hero">
-    <div class="portrait" aria-hidden="true">UD</div>
-    <div>
-      <h1>Curious by nature. Driven by people. Grounded in purpose.</h1>
-      <p class="intro">I’m Uwe Dauernheim, a software engineer, engineering leader, and lifelong builder based in Stockholm.</p>
-      <div class="links">
-        <a href="https://www.linkedin.com/in/uwedauernheim/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
-        <a href="https://github.com/djui"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.1 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>GitHub</a>
-        <a href="https://x.com/uwe_"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 1.2h3.7l-8 9.2L24 22.8h-7.4l-5.8-7.6-6.6 7.6H.5l8.6-9.8L0 1.2h7.6l5.2 6.9 6.1-6.9zm-1.3 19.4h2L6.5 3.3H4.3l13.3 17.3z"/></svg>X</a>
-        <a class="ghost" href="#apps">See my apps ↓</a>
+<header class="nav-wrap">
+  <nav class="nav" aria-label="Main">
+    <a class="nav-brand" href="#top" aria-label="Uwe Dauernheim, back to top">Uwe Dauernheim</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#career">Career</a></li>
+      <li><a href="#apps">Apps</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a class="btn btn-sm btn-primary nav-cta" href="https://www.linkedin.com/in/uwedauernheim/">Get in touch</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span></button>
+  </nav>
+  <div class="menu" id="menu" hidden>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#career">Career</a></li>
+      <li><a href="#apps">Apps</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a class="btn btn-primary" href="https://www.linkedin.com/in/uwedauernheim/">Message me on LinkedIn</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="hero-copy">
+      <p class="eyebrow">Engineering leader · Stockholm</p>
+      <h1 class="hero-title">Curious by nature.<br>Driven by people.<br>Grounded in purpose.</h1>
+      <p class="hero-sub">I lead engineering teams and build software that makes difficult things useful. Sixteen years across payments, music, mobility, health, energy and AI.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://www.linkedin.com/in/uwedauernheim/"><i class="ph ph-linkedin-logo" aria-hidden="true"></i>Message me on LinkedIn</a>
+      </div>
+      <div class="proof">
+        <p class="proof-label">Previously at</p>
+        <ul class="proof-logos">
+          <li><img src="assets/logos/klarna.png" alt="Klarna" width="32" height="32"></li>
+          <li><img src="assets/logos/spotify.png" alt="Spotify" width="32" height="32"></li>
+          <li><img src="assets/logos/voi.png" alt="Voi" width="32" height="32"></li>
+          <li><img src="assets/logos/grace-health.png" alt="Grace Health" width="32" height="32"></li>
+          <li class="on-white"><img src="assets/logos/northvolt.png" alt="Northvolt" width="32" height="32"></li>
+          <li><img src="assets/logos/aris-machina.png" alt="Aris Machina" width="32" height="32"></li>
+        </ul>
       </div>
     </div>
+    <figure class="hero-visual" aria-label="Icons of apps I build">
+      <div class="mosaic" id="mosaic"></div>
+      <figcaption class="mosaic-caption"><span id="app-count">21</span> apps I build in my spare time</figcaption>
+    </figure>
   </section>
 
-  <section class="about" id="about">
-    <div class="prose">
+  <section class="about reveal" id="about" aria-labelledby="about-h">
+    <div class="about-prose">
+      <h2 class="section-title" id="about-h">About</h2>
+      <p>I’m Uwe Dauernheim, a software engineer, engineering leader, and lifelong builder based in Stockholm.</p>
       <p>Over the years, I’ve moved from backend engineering and software architecture into leading technical teams and organizations at companies including Voi, Grace Health, Northvolt, and Aris Machina. My work has taken me through urban mobility, women’s health, sustainable energy, advanced manufacturing, data, and AI.</p>
-      <blockquote>What connects those experiences is a desire to make difficult things useful.</blockquote>
-      <p>Turning technical complexity into dependable products, helping talented people do their best work, and building organizations that can grow without losing clarity or humanity.</p>
-
-      <h2>How I work</h2>
-      <p>I believe strong engineering leadership is built on trust, transparency, and shared purpose. I stay close enough to the technology to understand the real challenges, while giving people the context and autonomy they need to solve them well.</p>
-      <p>My role is not to have every answer. It is to ask good questions, create clarity, share knowledge, and help teams make thoughtful decisions, even when the environment is moving quickly and the path ahead is uncertain.</p>
-      <p>I care about reliable systems, pragmatic architecture, and high standards. But technology is only part of the equation. The best products emerge when engineering, product, design, and business work together around a problem that genuinely matters.</p>
-
-      <h2>Beyond the job title</h2>
-      <p>I’m naturally curious and tend to follow questions further than most, whether they concern artificial intelligence, science, business, leadership, or how technology can interact more meaningfully with the physical world.</p>
-      <p>Outside work, I’m a father, partner, endurance athlete, and enthusiastic traveller. Training has taught me many of the same lessons I value professionally: consistency matters more than intensity, progress compounds quietly, and ambitious goals become possible when approached with patience.</p>
-      <blockquote>Ambitious about my standards rather than my status.</blockquote>
-      <p>I try to keep learning, remain humble, and build a life in which meaningful work, relationships, health, and curiosity reinforce one another.</p>
-
-      <h2>What I’m exploring now</h2>
-      <p>I’m currently taking time to train, travel, research emerging developments in AI, and think carefully about the next chapter of my career.</p>
-      <p>I’m particularly interested in engineering leadership where software and AI meet consequential, real-world problems, whether in AI-native products, physical systems, advanced industry, health, sustainability, or sport.</p>
-      <p>The right opportunity is not simply a bigger title. It is a difficult and worthwhile problem, a thoughtful group of people, and the freedom to build something that deserves to exist.</p>
-      <p class="bridge">Some of what I’ve built while exploring is <a href="#apps">below ↓</a></p>
+      <p>What connects those experiences is a desire to make difficult things useful: turning technical complexity into dependable products, helping talented people do their best work, and building organizations that can grow without losing clarity or humanity.</p>
     </div>
-
-    <aside class="career" aria-labelledby="career-h">
-      <h2 id="career-h">Career</h2>
-      <ol>
-        <li><span class="logo"><img src="assets/logos/aris-machina.png" alt="" width="36" height="36"></span><span><span class="role">Head of Engineering</span><span class="org">Aris Machina · AI</span><span class="yr">2025 – 2026</span></span></li>
-        <li><span class="logo" style="background:#fff"><img src="assets/logos/northvolt.png" alt="" width="36" height="36"></span><span><span class="role">Senior Engineering Manager</span><span class="org">Northvolt · manufacturing systems, data</span><span class="yr">2023 – 2025</span></span></li>
-        <li><span class="logo"><img src="assets/logos/grace-health.png" alt="" width="36" height="36"></span><span><span class="role">Head of Technology</span><span class="org">Grace Health · women’s health</span><span class="yr">2020 – 2023</span><span class="earlier">Engineering Manager before that</span></span></li>
-        <li><span class="logo"><img src="assets/logos/voi.png" alt="" width="36" height="36"></span><span><span class="role">VP of Software Engineering</span><span class="org">Voi · urban mobility</span><span class="yr">2019 – 2020</span><span class="earlier">Backend Engineering Lead before that</span></span></li>
-        <li><span class="logo"><img src="assets/logos/pfc.png" alt="" width="36" height="36"></span><span><span class="role">Lead Technical Architect</span><span class="org">P.F.C. Personal Finance Co. · fintech</span><span class="yr">2016 – 2019</span></span></li>
-        <li><span class="logo"><img src="assets/logos/betalo.png" alt="" width="36" height="36"></span><span><span class="role">Lead Technical Architect</span><span class="org">Betalo · payments</span><span class="yr">2016 – 2018</span></span></li>
-        <li><span class="logo"><img src="assets/logos/sensible-code.png" alt="" width="36" height="36"></span><span><span class="role">Technical Architect</span><span class="org">The Sensible Code Company (ScraperWiki) · Liverpool</span><span class="yr">2015 – 2016</span></span></li>
-        <li><span class="logo"><img src="assets/logos/spotify.png" alt="" width="36" height="36"></span><span><span class="role">Senior Software Engineer, backend</span><span class="org">Spotify · search and charts</span><span class="yr">2013 – 2015</span></span></li>
-        <li><span class="logo"><img src="assets/logos/klarna.png" alt="" width="36" height="36"></span><span><span class="role">Development Line Manager</span><span class="org">Klarna · payments</span><span class="yr">2010 – 2013</span><span class="earlier">Software Engineer and thesis student before that</span></span></li>
-        <li><span class="logo"><img src="assets/logos/kth.png" alt="" width="36" height="36"></span><span><span class="role">Education</span><span class="org">KTH Royal Institute of Technology</span></span></li>
+    <aside class="career" id="career" aria-labelledby="career-h">
+      <h2 class="section-label" id="career-h">Career</h2>
+      <ol class="career-list">
+        <li><img src="assets/logos/aris-machina.png" alt="" width="40" height="40"><div><p class="role">Head of Engineering</p><p class="org">Aris Machina · AI</p></div><p class="yr">2025 to 2026</p></li>
+        <li><img class="on-white" src="assets/logos/northvolt.png" alt="" width="40" height="40"><div><p class="role">Senior Engineering Manager</p><p class="org">Northvolt · manufacturing systems, data</p></div><p class="yr">2023 to 2025</p></li>
+        <li><img src="assets/logos/grace-health.png" alt="" width="40" height="40"><div><p class="role">Head of Technology</p><p class="org">Grace Health · women’s health</p></div><p class="yr">2020 to 2023</p></li>
+        <li><img src="assets/logos/voi.png" alt="" width="40" height="40"><div><p class="role">VP of Software Engineering</p><p class="org">Voi · urban mobility</p></div><p class="yr">2019 to 2020</p></li>
+        <li><img src="assets/logos/pfc.png" alt="" width="40" height="40"><div><p class="role">Lead Technical Architect</p><p class="org">P.F.C. Personal Finance Co. · fintech</p></div><p class="yr">2016 to 2019</p></li>
+        <li><img src="assets/logos/betalo.png" alt="" width="40" height="40"><div><p class="role">Lead Technical Architect</p><p class="org">Betalo · payments</p></div><p class="yr">2016 to 2018</p></li>
+        <li><img src="assets/logos/sensible-code.png" alt="" width="40" height="40"><div><p class="role">Technical Architect</p><p class="org">The Sensible Code Company (ScraperWiki)</p></div><p class="yr">2015 to 2016</p></li>
+        <li><img src="assets/logos/spotify.png" alt="" width="40" height="40"><div><p class="role">Senior Software Engineer, backend</p><p class="org">Spotify · search and charts</p></div><p class="yr">2013 to 2015</p></li>
+        <li><img src="assets/logos/klarna.png" alt="" width="40" height="40"><div><p class="role">Development Line Manager</p><p class="org">Klarna · payments</p></div><p class="yr">2010 to 2013</p></li>
+        <li><img src="assets/logos/kth.png" alt="" width="40" height="40"><div><p class="role">Education</p><p class="org">KTH Royal Institute of Technology</p></div><p class="yr"></p></li>
       </ol>
-      <a class="more" href="https://www.linkedin.com/in/uwedauernheim/">Full history on LinkedIn →</a>
+      <a class="text-link" href="https://www.linkedin.com/in/uwedauernheim/">Full history on LinkedIn <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
     </aside>
   </section>
 
-  <section class="apps" id="apps">
-    <div class="apps-head">
-      <h2>Apps</h2>
-      <p>Small, mostly local-first tools for Mac, iPhone, and the web.</p>
+  <section class="how reveal" aria-labelledby="how-h">
+    <h2 class="section-title" id="how-h">How I work</h2>
+    <div class="how-grid">
+      <article class="how-card">
+        <i class="ph ph-compass" aria-hidden="true"></i>
+        <h3>Close to the technology</h3>
+        <p>I stay close enough to the technology to understand the real challenges, while giving people the context and autonomy they need to solve them well.</p>
+      </article>
+      <article class="how-card">
+        <i class="ph ph-question" aria-hidden="true"></i>
+        <h3>Good questions over every answer</h3>
+        <p>My role is to ask good questions, create clarity, share knowledge, and help teams make thoughtful decisions, even when the path ahead is uncertain.</p>
+      </article>
+      <article class="how-card">
+        <i class="ph ph-users-three" aria-hidden="true"></i>
+        <h3>One team around one problem</h3>
+        <p>The best products emerge when engineering, product, design, and business work together around a problem that genuinely matters.</p>
+      </article>
     </div>
-    <div class="featured" id="featured"></div>
-    <div class="filters" id="filters" role="group" aria-label="Filter by platform"></div>
-    <div class="grid" id="grid"><noscript><p>Turn on JavaScript to see the apps, or browse <a href="https://github.com/djui?tab=repositories">my repositories</a>.</p></noscript></div>
+  </section>
+
+  <section class="tagline" aria-label="What connects my work">
+    <p class="tagline-text" id="tagline">Make difficult things useful, help people do their best work, and grow without losing clarity or humanity.</p>
+  </section>
+
+  <section class="beyond reveal" aria-labelledby="beyond-h">
+    <div>
+      <h2 class="section-title" id="beyond-h">Beyond the job title</h2>
+      <p>I’m naturally curious and tend to follow questions further than most, whether they concern artificial intelligence, science, business, leadership, or how technology can interact more meaningfully with the physical world.</p>
+      <p>Outside work, I’m a father, partner, endurance athlete, and enthusiastic traveller. Training has taught me many of the same lessons I value professionally: consistency matters more than intensity, progress compounds quietly, and ambitious goals become possible when approached with patience.</p>
+    </div>
+    <div>
+      <h2 class="section-title">What I’m exploring now</h2>
+      <p>I’m taking time to train, travel, research emerging developments in AI, and think carefully about the next chapter of my career.</p>
+      <p>I’m particularly interested in engineering leadership where software and AI meet consequential, real world problems: AI native products, physical systems, advanced industry, health, sustainability, or sport.</p>
+    </div>
+  </section>
+
+  <section class="apps reveal" id="apps" aria-labelledby="apps-h">
+    <div class="apps-head">
+      <h2 class="section-title" id="apps-h">Apps</h2>
+      <p>Small tools for Mac, iPhone and the web. Most of them run entirely on your device.</p>
+    </div>
+    <div class="featured" id="featured" aria-live="polite"></div>
+    <div class="filters" id="filters" role="group" aria-label="Filter apps by platform"></div>
+    <div class="grid" id="grid" aria-live="polite"></div>
     <a class="spotlight" href="https://havewecuredcanceryet.org">
-      <div>
+      <div class="spotlight-copy">
         <p class="eyebrow">Side project</p>
-        <h2>Have we cured cancer yet? <em>No.</em></h2>
-        <p>A running, sourced log of what we point AI at instead of cancer, next to the work that does move the needle. Not anti-AI. Pro-aim.</p>
-        <span class="cta">Read the log →</span>
+        <h3>Have we cured cancer yet? No.</h3>
+        <p>A running, sourced log of what we point AI at instead of cancer. Not anti AI. Pro aim.</p>
+        <span class="text-link">Read the log <i class="ph ph-arrow-right" aria-hidden="true"></i></span>
       </div>
-      <img src="https://havewecuredcanceryet.org/og.png" alt="Preview of havewecuredcanceryet.org" loading="lazy" width="1200" height="630">
+      <img src="https://havewecuredcanceryet.org/og.png" alt="The havewecuredcanceryet.org front page, which answers No" loading="lazy" width="1200" height="630">
     </a>
     <div class="experiments" id="experiments"></div>
   </section>
 
-  <footer>
-    <span>© Uwe Dauernheim</span>
-    <span><a href="https://github.com/djui">GitHub</a> · <a href="https://www.linkedin.com/in/uwedauernheim/">LinkedIn</a></span>
-  </footer>
-</div>
+  <section class="faq reveal" id="faq" aria-labelledby="faq-h">
+    <h2 class="section-title" id="faq-h">Questions people ask</h2>
+    <div class="faq-list">
+      <details><summary>What kind of role are you looking for?<i class="ph ph-plus" aria-hidden="true"></i></summary><p>Engineering leadership where software and AI meet consequential, real world problems: AI native products, physical systems, advanced industry, health, sustainability, or sport. Typically Head of Engineering, CTO, or senior engineering management.</p></details>
+      <details><summary>Where do you want to work?<i class="ph ph-plus" aria-hidden="true"></i></summary><p>Stockholm. On site, hybrid, or remote all work for me.</p></details>
+      <details><summary>What is your technical background?<i class="ph ph-plus" aria-hidden="true"></i></summary><p>Backend engineering and software architecture. Distributed payment systems in Erlang at Klarna, search and charts at Spotify, payment platforms at Betalo and P.F.C., then data and AI platforms at Northvolt and Aris Machina.</p></details>
+      <details><summary>Are your apps free?<i class="ph ph-plus" aria-hidden="true"></i></summary><p>Most are free downloads from GitHub or open straight in the browser. A few are early builds.</p></details>
+      <details><summary>Do your apps collect my data?<i class="ph ph-plus" aria-hidden="true"></i></summary><p>Most of them run entirely on your device. Murmur, Lifelog and Narrate never upload what you open.</p></details>
+      <details><summary>How do I report a bug or suggest a feature?<i class="ph ph-plus" aria-hidden="true"></i></summary><p>Open an issue on the app’s GitHub repository, or send me a message on LinkedIn.</p></details>
+    </div>
+  </section>
 
-<script>
-const PLATFORMS = { mac: "macOS", ios: "iOS", watch: "watchOS", web: "Web", chrome: "Chrome", cli: "CLI" };
-const FILTERS = [["all", "All"], ["mac", "macOS"], ["ios", "iPhone and Watch"], ["web", "Web"], ["chrome", "Chrome"], ["cli", "CLI"]];
+  <section class="final reveal" aria-labelledby="final-h">
+    <h2 class="final-title" id="final-h">Have a difficult and worthwhile problem?<br>Let’s talk about it.</h2>
+    <p class="final-sub">Open to engineering leadership roles in Stockholm, hybrid or remote.</p>
+    <a class="btn btn-primary" href="https://www.linkedin.com/in/uwedauernheim/"><i class="ph ph-linkedin-logo" aria-hidden="true"></i>Message me on LinkedIn</a>
+  </section>
+</main>
 
-const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
-const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+<footer class="footer">
+  <p>© 2026 Uwe Dauernheim · No cookies, no tracking</p>
+  <ul>
+    <li><a href="https://github.com/djui"><i class="ph ph-github-logo" aria-hidden="true"></i>GitHub</a></li>
+    <li><a href="https://www.linkedin.com/in/uwedauernheim/"><i class="ph ph-linkedin-logo" aria-hidden="true"></i>LinkedIn</a></li>
+    <li><a href="https://x.com/uwe_"><i class="ph ph-x-logo" aria-hidden="true"></i>X</a></li>
+  </ul>
+</footer>
 
-function icon(app) {
-  return app.icon
-    ? `<span class="icon has-img"><img src="${esc(app.icon)}" alt="" loading="lazy" width="104" height="104"></span>`
-    : `<span class="icon" aria-hidden="true">${esc(app.name[0])}</span>`;
-}
-const tags = app => `<span class="tags">${app.platforms.map(p => `<span class="tag">${PLATFORMS[p]}</span>`).join("")}</span>`;
-const open = (app, cls) => app.url ? `<a class="${cls}" href="${esc(app.url)}" style="--tint:${app.tint}">` : `<div class="${cls}" style="--tint:${app.tint}">`;
-const close = app => app.url ? "</a>" : "</div>";
-const onIos = a => a.platforms.includes("ios") || a.platforms.includes("watch");
-const matches = (a, f) => f === "all" || (f === "ios" ? onIos(a) : a.platforms.includes(f));
-
-function renderFeatured(apps) {
-  const lead = shuffle(apps.filter(a => a.featured === "lead"))[0];
-  const rest = shuffle(apps.filter(a => a.featured && a !== lead)).slice(0, 2);
-  document.getElementById("featured").innerHTML = [lead, ...rest].map(a => `
-    ${open(a, "feat")}
-      <span class="stage">${icon(a)}</span>
-      <span class="body">
-        <h3>${esc(a.name)}</h3>
-        <p>${esc(a.tagline)}</p>
-        <span class="meta">${tags(a)}${a.cta ? `<span class="cta">${esc(a.cta)} →</span>` : ""}</span>
-      </span>
-    ${close(a)}`).join("");
-}
-
-function renderGrid(apps, filter) {
-  document.getElementById("grid").innerHTML = apps.filter(a => matches(a, filter)).map(a => `
-    ${open(a, "card")}
-      ${icon(a)}
-      <span><h3>${esc(a.name)}</h3><p>${esc(a.tagline)}</p>${tags(a)}</span>
-    ${close(a)}`).join("");
-}
-
-function renderFilters(apps) {
-  const count = f => apps.filter(a => matches(a, f)).length;
-  const el = document.getElementById("filters");
-  el.innerHTML = FILTERS.filter(([f]) => count(f) > 0)
-    .map(([f, label]) => `<button type="button" data-f="${f}" aria-pressed="${f === "all"}">${label}<span class="n">${count(f)}</span></button>`).join("");
-  el.addEventListener("click", e => {
-    const b = e.target.closest("button");
-    if (!b) return;
-    el.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
-    renderGrid(apps, b.dataset.f);
-  });
-}
-
-function renderExperiments(items) {
-  if (!items?.length) return;
-  document.getElementById("experiments").innerHTML = `<h2>Experiments and toys</h2><ul>${items.map(x =>
-    `<li><a href="${esc(x.url)}"><span>${esc(x.name)}</span><span class="sub">${esc(x.tagline)}</span></a></li>`).join("")}</ul>`;
-}
-
-fetch("apps.json")
-  .then(r => r.json())
-  .then(({ apps, experiments }) => {
-    renderFeatured(apps);
-    renderFilters(apps);
-    renderGrid(apps, "all");
-    renderExperiments(experiments);
-  })
-  .catch(() => {
-    document.getElementById("grid").innerHTML = `<p>Couldn’t load the app list. Browse <a href="https://github.com/djui?tab=repositories">my repositories</a> instead.</p>`;
-  });
-</script>
+<script src="assets/site/site.js"></script>
 </body>
 </html>

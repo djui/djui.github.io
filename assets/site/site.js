@@ -127,9 +127,147 @@ function setupTagline() {
   words.forEach(w => io.observe(w));
 }
 
+// The Ask form stays hidden until the Worker in worker/ is deployed and its URL is set here.
+const ASK_URL = "";
+const BOOKING_URL = document.querySelector(".nav-cta").href;
+const bookingLink = note => `${BOOKING_URL}?notes=${encodeURIComponent(note)}`;
+
+const PROBLEMS = [
+  { k: "Payments", big: "Money has to move, every single time", logo: "klarna", where: "Klarna · 2010 to 2013", story: "Distributed payment systems in Erlang, then leading the development line." },
+  { k: "Scale", big: "Search that millions of people use every day", logo: "spotify", where: "Spotify · 2013 to 2015", story: "Backend engineer on search and charts." },
+  { k: "Fintech", big: "A payments platform built from scratch", logo: "pfc", where: "Betalo and P.F.C. · 2016 to 2019", story: "Lead technical architect for a payment platform and a neobank." },
+  { k: "Hypergrowth", big: "A scale-up growing faster than its systems", logo: "voi", where: "Voi · 2019 to 2020", story: "VP of Software Engineering in urban mobility." },
+  { k: "Health", big: "A health product people trust with private questions", logo: "grace-health", where: "Grace Health · 2020 to 2023", story: "Head of Technology for a women’s health app." },
+  { k: "Industry", big: "Software and data on a factory floor", logo: "northvolt", where: "Northvolt · 2023 to 2025", story: "Senior engineering manager for manufacturing systems and data." },
+  { k: "AI", big: "AI that does real work, not demos", logo: "aris-machina", where: "Aris Machina · 2025 to 2026", story: "Head of Engineering, AI for manufacturing." },
+  { k: "Builder", big: "A leader who still ships code", logo: null, where: "21 apps on the side", story: "Mac, iPhone and web apps, most of them running fully on device." },
+];
+
+function setupDeck() {
+  const deck = document.getElementById("deck");
+  const actions = document.getElementById("deck-actions");
+  const count = document.getElementById("deck-count");
+  let i = 0, liked = [], busy = false;
+
+  const render = () => {
+    busy = false;
+    if (i >= PROBLEMS.length) return renderResult();
+    actions.hidden = false;
+    deck.innerHTML = PROBLEMS.slice(i, i + 3).reverse().map(p => `
+      <article class="swipe-card">
+        <span class="stamp y">We have this</span><span class="stamp n">Not for us</span>
+        <span class="k">${esc(p.k)}</span>
+        <h3 class="big">${esc(p.big)}</h3>
+        <span class="where">${p.logo ? `<img src="${ROOT}assets/logos/${p.logo}.png" alt="" width="24" height="24">` : ""}${esc(p.where)}</span>
+        <p class="story">${esc(p.story)}</p>
+      </article>`).join("");
+    count.textContent = `${i + 1} of ${PROBLEMS.length}`;
+    drag(deck.lastElementChild);
+  };
+
+  const renderResult = () => {
+    actions.hidden = true;
+    count.textContent = "";
+    const note = liked.length ? `Swiped right on: ${liked.join(", ")}.` : "";
+    deck.innerHTML = `<div class="deck-result">
+      <h3>${liked.length ? `${liked.length} of ${PROBLEMS.length} sound familiar` : "None of these? Fair."}</h3>
+      <p>${liked.length ? `${esc(liked.join(", "))}. Let’s talk about it.` : "Tell me what you’re working on instead."}</p>
+      <a class="btn btn-primary" href="${esc(note ? bookingLink(note) : BOOKING_URL)}"><i class="ph ph-calendar-check" aria-hidden="true"></i>Book a 20 minute call</a>
+      <button class="btn btn-ghost" type="button" data-restart>Start over</button>
+    </div>`;
+  };
+
+  const decide = yes => {
+    const top = deck.querySelector(".swipe-card:last-child");
+    if (!top || busy) return;
+    busy = true;
+    if (yes) liked.push(PROBLEMS[i].k);
+    i++;
+    top.style.transform = `translateX(${yes ? 480 : -480}px) rotate(${yes ? 16 : -16}deg)`;
+    top.style.opacity = "0";
+    setTimeout(render, reduceMotion ? 0 : 300);
+  };
+
+  function drag(card) {
+    let x0 = null, dx = 0;
+    const [yes, no] = card.querySelectorAll(".stamp");
+    card.addEventListener("pointerdown", e => { x0 = e.clientX; dx = 0; card.setPointerCapture(e.pointerId); card.classList.add("is-dragging"); });
+    card.addEventListener("pointermove", e => {
+      if (x0 === null) return;
+      dx = e.clientX - x0;
+      card.style.transform = `translateX(${dx}px) rotate(${dx / 20}deg)`;
+      yes.style.opacity = Math.max(0, dx / 100);
+      no.style.opacity = Math.max(0, -dx / 100);
+    });
+    const end = () => {
+      if (x0 === null) return;
+      x0 = null;
+      card.classList.remove("is-dragging");
+      if (Math.abs(dx) > 100) return decide(dx > 0);
+      card.style.transform = "";
+      yes.style.opacity = no.style.opacity = "0";
+    };
+    card.addEventListener("pointerup", end);
+    card.addEventListener("pointercancel", end);
+  }
+
+  actions.addEventListener("click", e => { const b = e.target.closest("[data-swipe]"); if (b) decide(b.dataset.swipe === "yes"); });
+  deck.addEventListener("click", e => { if (e.target.closest("[data-restart]")) { i = 0; liked = []; render(); } });
+  addEventListener("keydown", e => {
+    if (!deck.closest("section").matches(":hover, :focus-within")) return;
+    if (e.key === "ArrowRight") decide(true);
+    if (e.key === "ArrowLeft") decide(false);
+  });
+  render();
+}
+
+function setupAsk() {
+  if (!ASK_URL) return;
+  const form = document.getElementById("ask");
+  const input = document.getElementById("ask-input");
+  const out = document.getElementById("ask-answer");
+  form.hidden = false;
+  input.addEventListener("keydown", e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); form.requestSubmit(); } });
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    const question = input.value.trim();
+    if (!question) return;
+    out.hidden = false;
+    out.className = "ask-answer is-loading";
+    out.textContent = "Thinking…";
+    try {
+      const r = await fetch(ASK_URL, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ question }) });
+      const data = await r.json();
+      if (!r.ok) throw new Error(data.error || r.status);
+      out.className = "ask-answer";
+      out.innerHTML = `${esc(data.answer)} <a href="${esc(bookingLink(`From Ask: ${question}`))}">Book a 20 minute call</a>`;
+    } catch (err) {
+      out.className = "ask-answer";
+      out.innerHTML = `I couldn’t answer that right now. <a href="${esc(BOOKING_URL)}">Book a call</a> and ask me directly.`;
+    }
+  });
+}
+
+function setupInk() {
+  const els = document.querySelectorAll(".ink");
+  if (reduceMotion || !("IntersectionObserver" in window)) return;
+  els.forEach(el => el.classList.add("is-waiting"));
+  const io = new IntersectionObserver(entries => entries.forEach(en => {
+    if (!en.isIntersecting) return;
+    const el = en.target;
+    const delay = el.classList.contains("ink-signature") && el.previousElementSibling?.classList.contains("ink-note") ? 1400 : 200;
+    setTimeout(() => { el.classList.remove("is-waiting"); el.classList.add("is-writing"); }, delay);
+    io.unobserve(el);
+  }), { rootMargin: "0px 0px -15% 0px" });
+  els.forEach(el => io.observe(el));
+}
+
 setupNav();
 setupReveals();
 setupTagline();
+setupDeck();
+setupAsk();
+setupInk();
 renderSkeletons();
 fetch(ROOT + "apps.json")
   .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })

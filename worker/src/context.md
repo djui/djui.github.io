@@ -26,6 +26,59 @@ Backend engineering and software architecture. Distributed payment systems in Er
 
 What connects his work: make difficult things useful, help talented people do their best work, and build organizations that grow without losing clarity or humanity.
 
+## Portrait
+
+An experienced software engineer, engineering leader and lifelong builder. Intellectually curious, people-oriented, pragmatic, and strongly motivated by purpose. Likes turning complicated systems into useful products, helping capable people do their best work, and building organizations that keep clarity and humanity as they grow. The common thread across his career is not one industry: it is making difficult technical systems useful, dependable and understandable.
+
+Career arc: software engineer on distributed, transaction-heavy systems; senior backend engineer at consumer scale; technical architect on data-centric products; lead architect in fintech; backend engineering lead, then executive responsibility for software engineering; engineering manager and technology leader in digital health; senior engineering manager for data and manufacturing systems; head of engineering in AI. Now in a period of exploration, independent product building, and choosing the next chapter. He has worked in both large technology companies and small, mission-driven or fast-growing ones.
+
+## How he works, in more detail
+
+- Starts with the real problem and cares how the result feels to the person using it.
+- Moves comfortably between technical details, product decisions, organizational questions and visual design.
+- Prefers concrete prototypes and working software over long abstract discussion. Works iteratively: build, inspect, critique, adjust, verify.
+- Notices small inconsistencies in interfaces, wording, workflows and system behavior.
+- Values evidence, realistic testing, and being explicit about what is still unverified.
+- Likes autonomy and high ownership, with a clear purpose, constraints and expected outcome.
+- Appreciates directness; avoids ceremony and corporate filler. Wants work to keep warmth, playfulness and a human touch.
+
+## Leadership philosophy
+
+- Lead people; manage systems. A manager is a guide, not a commander.
+- Give people context, purpose and clear expectations, not just tasks.
+- Create psychological safety while keeping meaningful standards.
+- Match autonomy to readiness: from demonstration and oversight toward independent execution and shared vision.
+- Communicate roadmaps, priorities, trade-offs and the reasons behind decisions.
+- Recognize initiative and good work promptly. Listen carefully before assessing a situation.
+- Stay calm and fair under ambiguity. Be honest about mistakes and limitations.
+- Encourage collaboration without turning consensus into indecision.
+- Protect teams from unnecessary meetings, unclear priorities and avoidable context switching.
+
+## Values
+
+Curiosity, purpose, responsibility, fairness, honesty and integrity, reliability, simplicity without oversimplification, empathy and respect, humility, continuous learning, excellence without status-seeking, and contribution over the long term.
+
+## What motivates him
+
+Meaningful, difficult problems; work that helps real people; room to learn and experiment; combining technical judgment with people leadership; visible progress through working results; high standards that aren't performative; teaching and mentoring.
+
+## Strengths to emphasize
+
+- Engineering leadership grounded in real technical depth.
+- Experience across several consequential industries.
+- Translating between business, product, people and technology.
+- Building and scaling teams without losing clarity or humanity.
+- Practical AI curiosity combined with mature engineering judgment.
+- Comfort with ambiguous, cross-functional, real-world systems.
+- A builder's mindset: he still ships products himself.
+
+He is not a generic executive, not a pure people manager, and not motivated mainly by title or status.
+
+## Interests
+
+- Intellectual: AI and its social and professional implications, software architecture and distributed systems, product design and human-computer interaction, physics and astrophysics, language and meaning, leadership and organizational psychology, philosophy and purpose. Learns best when theory connects to a project or a real decision.
+- Personal: endurance and functional fitness (running, cycling, swimming), hiking, climbing, kayaking, sailing, skiing, travel, piano, drawing, photography, cooking, and building small apps and playful technical projects. Training is part of how he keeps energy, structure and long-term health.
+
 ## What he is looking for
 
 Engineering leadership where software and AI meet consequential, real world problems: AI native products, physical systems, advanced industry, health, sustainability, or sport. Typically Head of Engineering, CTO, or senior engineering management. Based in Stockholm; on site, hybrid or remote all work.

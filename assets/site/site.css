@@ -510,3 +510,23 @@ a.card:hover { transform: translateY(-2px); }
   .note-honest { position: absolute; order: 0; top: 96px; left: calc(50% + 200px); margin: 0; transform: rotate(-5deg); }
   .note-honest .note-arrow { transform: none; }
 }
+
+/* Polaroids: four taped snapshots under "Beyond the job title" */
+.polaroids { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px 18px; margin-top: 40px; }
+.polaroid { position: relative; width: 148px; margin: 0; padding: 10px 10px 0; background: #ffffff; box-shadow: 0 10px 24px -14px rgba(18, 18, 18, 0.45), 0 0 0 1px var(--border); transform: rotate(var(--tilt)); transition: transform 500ms var(--ease); }
+.polaroid:nth-child(1) { --tilt: -4deg; }
+.polaroid:nth-child(2) { --tilt: 2.5deg; margin-top: 12px; }
+.polaroid:nth-child(3) { --tilt: -1.5deg; }
+.polaroid:nth-child(4) { --tilt: 3.5deg; margin-top: 8px; }
+.polaroid:hover { transform: rotate(0deg) scale(1.04); }
+.polaroid::before { content: ""; position: absolute; top: -10px; left: 50%; width: 64px; height: 20px; margin-left: -32px; background: rgba(236, 214, 140, 0.6); transform: rotate(-3deg); }
+.polaroid:nth-child(even)::before { transform: rotate(4deg); }
+.polaroid img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; }
+.polaroid figcaption { padding: 10px 0 14px; font-size: 14px; line-height: 20px; font-weight: 500; color: var(--pen); text-align: center; }
+@media (max-width: 768px) {
+  .polaroids { gap: 20px 16px; }
+  .polaroid { width: calc(50% - 8px); max-width: 168px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .polaroid:hover { transform: rotate(var(--tilt)); }
+}

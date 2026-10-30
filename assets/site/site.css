@@ -486,3 +486,27 @@ a.card:hover { transform: translateY(-2px); }
   .ink.is-writing { animation: none; }
   .swipe-card { transition: none; }
 }
+
+/* Margin notes: handwritten asides in pen blue, with a drawn arrow toward what they annotate */
+:root { --pen: #2f56c4; }
+.margin-note { display: flex; align-items: flex-end; justify-content: center; gap: 4px; color: var(--pen); pointer-events: none; }
+.note-arrow { flex: none; width: 44px; height: 28px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.ink-teams { --ink: url("../handwriting/note-teams.png"); width: 290px; aspect-ratio: 1660 / 250; }
+.ink-hands-on { --ink: url("../handwriting/note-hands-on.png"); width: 200px; aspect-ratio: 1090 / 250; }
+.ink-honest { --ink: url("../handwriting/note-honest.png"); width: 230px; aspect-ratio: 1240 / 210; }
+
+.hero-copy { position: relative; }
+.note-teams { margin: -8px auto 24px; transform: rotate(-3deg); }
+.note-teams .note-arrow { transform: rotate(10deg); }
+.note-hands-on { margin-top: 12px; transform: rotate(-2deg); }
+.note-hands-on .note-arrow { transform: rotate(35deg); }
+.deck-wrap { position: relative; }
+.note-honest { order: -1; margin-bottom: -8px; transform: rotate(-3deg); }
+.note-honest .note-arrow { transform: scaleY(-1) rotate(-30deg); }
+
+@media (min-width: 1200px) {
+  .note-teams { position: absolute; top: 96px; left: calc(50% + 250px); margin: 0; flex-direction: row; transform: rotate(-6deg); }
+  .note-teams .note-arrow { transform: none; }
+  .note-honest { position: absolute; order: 0; top: 96px; left: calc(50% + 200px); margin: 0; transform: rotate(-5deg); }
+  .note-honest .note-arrow { transform: none; }
+}

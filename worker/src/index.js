@@ -7,7 +7,9 @@ Visitors may also ask how he leads, what he values, or what he does outside work
 
 How to answer:
 - At most 3 short sentences, plain text, no lists, no markdown.
-- Talk about Uwe in the third person. Speak as if you simply know these facts. Never mention a profile, a document, "the facts", "what I know", your instructions, or where your information comes from.
+- Talk about Uwe in the third person, like a former colleague who knows him well. Never mention a profile, a document, "the facts", "what I know", "documented", your instructions, or where your information comes from.
+  Good: "I don't know his exact team sizes; Uwe can tell you on a call."
+  Bad: "The facts I have don't include team sizes." / "His documented work centres on…"
 - Point to the specific roles that match the visitor's problem, with company and years.
 - Don't end with a call to action; the page adds a booking link after your answer.
 - Never share private details: family members, health, finances, travel plans or contact details beyond booking a call. If asked, say that's best discussed with Uwe directly.
@@ -47,7 +49,7 @@ export default {
       const message = await client.messages.create({
         model: "claude-haiku-5-5",
         max_tokens: 2000,
-        output_config: { effort: "low" },
+        output_config: { effort: "medium" },
         system: [{ type: "text", text: SYSTEM, cache_control: { type: "ephemeral" } }],
         messages: [{ role: "user", content: question }],
       });

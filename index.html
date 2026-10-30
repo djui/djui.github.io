@@ -49,6 +49,7 @@
     <div class="hero-copy">
       <p class="eyebrow">Engineering leader · Stockholm</p>
       <h1 class="hero-title">Curious by nature.<br>Driven by people.<br>Grounded in purpose.</h1>
+      <span class="margin-note note-teams"><svg class="note-arrow" viewBox="0 0 64 40" aria-hidden="true"><path d="M60 30 C 44 34, 22 28, 8 10 M8 10 L 7 23 M8 10 L 20 13"/></svg><span class="ink ink-teams" role="img" aria-label="Handwritten note: ask my old teams, not me"></span></span>
       <p class="hero-sub">I lead engineering teams and build software that makes difficult things useful. Sixteen years across payments, music, mobility, health, energy and AI.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="https://cal.com/uwe-dauernheim-f4g5a4/intro"><i class="ph ph-calendar-check" aria-hidden="true"></i>Book a 20 minute call</a>
@@ -69,6 +70,7 @@
     <figure class="hero-visual" aria-label="Icons of apps I build">
       <div class="mosaic" id="mosaic"></div>
       <figcaption class="mosaic-caption"><span id="app-count">21</span> apps I build in my spare time</figcaption>
+      <span class="margin-note note-hands-on"><svg class="note-arrow" viewBox="0 0 64 40" aria-hidden="true"><path d="M60 30 C 44 34, 22 28, 8 10 M8 10 L 7 23 M8 10 L 20 13"/></svg><span class="ink ink-hands-on" role="img" aria-label="Handwritten note: how I stay hands-on"></span></span>
     </figure>
   </section>
 
@@ -78,6 +80,7 @@
       <p>I’m Uwe Dauernheim, a software engineer, engineering leader, and lifelong builder based in Stockholm.</p>
       <p>Over the years, I’ve moved from backend engineering and software architecture into leading technical teams and organizations at companies including Voi, Grace Health, Northvolt, and Aris Machina. My work has taken me through urban mobility, women’s health, sustainable energy, advanced manufacturing, data, and AI.</p>
       <p>What connects those experiences is a desire to make difficult things useful: turning technical complexity into dependable products, helping talented people do their best work, and building organizations that can grow without losing clarity or humanity.</p>
+      <span class="ink ink-signature" role="img" aria-label="Signed, Uwe"></span>
     </div>
     <aside class="career" id="career" aria-labelledby="career-h">
       <h2 class="section-label" id="career-h">Career</h2>
@@ -118,6 +121,29 @@
     </div>
   </section>
 
+  <section class="match reveal" id="match" aria-labelledby="match-h">
+    <h2 class="section-title" id="match-h">Do you have one of these problems?</h2>
+    <p class="match-sub">Swipe right on the ones you recognise. Each one is a problem I have worked on before.</p>
+    <div class="deck-wrap">
+      <span class="margin-note note-honest"><svg class="note-arrow" viewBox="0 0 64 40" aria-hidden="true"><path d="M60 30 C 44 34, 22 28, 8 10 M8 10 L 7 23 M8 10 L 20 13"/></svg><span class="ink ink-honest" role="img" aria-label="Handwritten note: be honest, I can take it"></span></span>
+      <div class="deck" id="deck" aria-live="polite"></div>
+      <div class="deck-actions" id="deck-actions">
+        <button class="btn btn-ghost" type="button" data-swipe="no"><i class="ph ph-x" aria-hidden="true"></i>Not for us</button>
+        <button class="btn btn-primary" type="button" data-swipe="yes"><i class="ph ph-check" aria-hidden="true"></i>We have this</button>
+      </div>
+      <p class="deck-count" id="deck-count"></p>
+    </div>
+    <form class="ask" id="ask" hidden>
+      <label class="ask-label" for="ask-input">Or describe your problem in your own words</label>
+      <div class="ask-row">
+        <textarea id="ask-input" name="question" rows="2" maxlength="500" required placeholder="Our factory data lives in 14 systems and nobody trusts the dashboards."></textarea>
+        <button class="btn btn-primary" type="submit"><i class="ph ph-sparkle" aria-hidden="true"></i>Ask</button>
+      </div>
+      <p class="ask-answer" id="ask-answer" aria-live="polite" hidden></p>
+      <p class="ask-note">An AI answers from what’s on this page only. It can be wrong, so book a call for the real answer.</p>
+    </form>
+  </section>
+
   <section class="tagline" aria-label="What connects my work">
     <p class="tagline-text" id="tagline">Make difficult things useful, help people do their best work, and grow without losing clarity or humanity.</p>
   </section>
@@ -127,6 +153,12 @@
       <h2 class="section-title" id="beyond-h">Beyond the job title</h2>
       <p>I’m naturally curious and tend to follow questions further than most, whether they concern artificial intelligence, science, business, leadership, or how technology can interact more meaningfully with the physical world.</p>
       <p>Outside work, I’m a father, partner, endurance athlete, and enthusiastic traveller. Training has taught me many of the same lessons I value professionally: consistency matters more than intensity, progress compounds quietly, and ambitious goals become possible when approached with patience.</p>
+      <div class="polaroids">
+        <figure class="polaroid"><img src="assets/photos/sailing.jpg" alt="A sailboat’s sail lit by the sunset over the water" width="480" height="480" loading="lazy"><figcaption>golden hour</figcaption></figure>
+        <figure class="polaroid"><img src="assets/photos/medals.jpg" alt="Two rows of race finisher medals, including Ironman Tallinn and Kalmar" width="480" height="480" loading="lazy"><figcaption>all finished</figcaption></figure>
+        <figure class="polaroid"><img src="assets/photos/flying.jpg" alt="A Norwegian airplane wing above clouds and blue sea" width="480" height="480" loading="lazy"><figcaption>next stop?</figcaption></figure>
+        <figure class="polaroid"><img src="assets/photos/cake.jpg" alt="A homemade Grand Theft Birthday cake with candles" width="480" height="480" loading="lazy"><figcaption>dad duty</figcaption></figure>
+      </div>
     </div>
     <div>
       <h2 class="section-title">What I’m exploring now</h2>
@@ -171,6 +203,10 @@
   <section class="final reveal" aria-labelledby="final-h">
     <h2 class="final-title" id="final-h">Have a difficult and worthwhile problem?<br>Let’s talk about it.</h2>
     <p class="final-sub">Open to engineering leadership roles in Stockholm, hybrid or remote.</p>
+    <div class="final-note">
+      <span class="ink ink-note" role="img" aria-label="Handwritten: I read every message myself. Coffee in Stockholm is on me."></span>
+      <span class="ink ink-signature" role="img" aria-label="Signed, Uwe"></span>
+    </div>
     <div class="hero-actions final-actions">
       <a class="btn btn-primary" href="https://cal.com/uwe-dauernheim-f4g5a4/intro"><i class="ph ph-calendar-check" aria-hidden="true"></i>Book a 20 minute call</a>
       <a class="btn btn-ghost" href="https://www.linkedin.com/in/uwedauernheim/"><i class="ph ph-linkedin-logo" aria-hidden="true"></i>Message me on LinkedIn</a>

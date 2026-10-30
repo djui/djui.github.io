@@ -131,7 +131,7 @@ main > section, .footer { max-width: var(--max); margin: 0 auto; padding-left: v
 .career { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-big); padding: 24px; }
 .career-list li { display: grid; grid-template-columns: 40px minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 12px 0; border-top: 1px solid var(--border); }
 .career-list li:first-child { border-top: 0; padding-top: 0; }
-.career-row { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; gap: inherit; align-items: center; margin: -6px -8px; padding: 6px 8px; border-radius: 12px; text-decoration: none; transition: background-color 300ms var(--ease); }
+.career-row { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; gap: inherit; justify-items: inherit; align-items: center; margin: -6px -8px; padding: 6px 8px; border-radius: 12px; text-decoration: none; transition: background-color 300ms var(--ease); }
 .career-row:hover { background: var(--surface-2); }
 .career-row:hover .role { text-decoration: underline; text-underline-offset: 3px; }
 .career-list img { width: 40px; height: 40px; border-radius: 8px; object-fit: cover; }

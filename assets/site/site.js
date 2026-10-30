@@ -128,7 +128,7 @@ function setupTagline() {
 }
 
 // The Ask form stays hidden until the Worker in worker/ is deployed and its URL is set here.
-const ASK_URL = "";
+const ASK_URL = "https://ask-uwe.uwe-af1.workers.dev";
 const BOOKING_URL = document.querySelector(".nav-cta").href;
 const bookingLink = note => `${BOOKING_URL}?notes=${encodeURIComponent(note)}`;
 

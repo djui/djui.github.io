@@ -1,10 +1,13 @@
 <!doctype html>
-<html lang="en" data-theme="light" data-root="">
+<html lang="en" data-root="">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Uwe Dauernheim · Engineering leader in Stockholm</title>
 <meta name="description" content="Uwe Dauernheim leads engineering teams and builds software that makes difficult things useful. Sixteen years across Klarna, Spotify, Voi, Grace Health, Northvolt and Aris Machina, plus 21 apps for Mac, iPhone and the web.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FAFAF7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1A1915" media="(prefers-color-scheme: dark)">
 <meta property="og:title" content="Uwe Dauernheim">
 <meta property="og:description" content="Curious by nature. Driven by people. Grounded in purpose.">
 <meta property="og:type" content="profile">
@@ -47,10 +50,9 @@
 <main id="main">
   <section class="hero" id="top">
     <div class="hero-copy">
-      <p class="eyebrow">Engineering leader · Stockholm</p>
-      <h1 class="hero-title">Curious by nature.<br>Driven by people.<br>Grounded in purpose.</h1>
+      <h1 class="hero-title">Engineering leader for software that meets the real world.</h1>
       <span class="margin-note note-teams"><svg class="note-arrow" viewBox="0 0 64 40" aria-hidden="true"><path d="M60 30 C 44 34, 22 28, 8 10 M8 10 L 7 23 M8 10 L 20 13"/></svg><span class="ink ink-teams" role="img" aria-label="Handwritten note: ask my old teams, not me"></span></span>
-      <p class="hero-sub">I lead engineering teams and build software that makes difficult things useful. Sixteen years across payments, music, mobility, health, energy and AI.</p>
+      <p class="hero-sub">Most recently Head of Engineering at Aris Machina, building AI for manufacturing. Sixteen years across payments, music, mobility, health, energy and AI. Now open to Head of Engineering and CTO roles in Stockholm.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="https://cal.com/uwe-dauernheim/intro"><i class="ph ph-calendar-check" aria-hidden="true"></i>Book a 20 minute call</a>
         <a class="btn btn-ghost" href="https://www.linkedin.com/in/uwedauernheim/"><i class="ph ph-linkedin-logo" aria-hidden="true"></i>Message me on LinkedIn</a>
@@ -67,11 +69,29 @@
         </ul>
       </div>
     </div>
-    <figure class="hero-visual" aria-label="Icons of apps I build">
-      <div class="mosaic" id="mosaic"></div>
-      <figcaption class="mosaic-caption"><span id="app-count">21</span> apps I build in my spare time</figcaption>
-      <span class="margin-note note-hands-on"><svg class="note-arrow" viewBox="0 0 64 40" aria-hidden="true"><path d="M60 30 C 44 34, 22 28, 8 10 M8 10 L 7 23 M8 10 L 20 13"/></svg><span class="ink ink-hands-on" role="img" aria-label="Handwritten note: how I stay hands-on"></span></span>
-    </figure>
+  </section>
+
+  <section class="match reveal" id="match" aria-labelledby="match-h">
+    <h2 class="section-title" id="match-h">Do you have one of these problems?</h2>
+    <p class="match-sub">Mark the ones you recognise. I’ve worked on every one of them.</p>
+    <div class="deck-wrap">
+      <span class="margin-note note-honest"><svg class="note-arrow" viewBox="0 0 64 40" aria-hidden="true"><path d="M60 30 C 44 34, 22 28, 8 10 M8 10 L 7 23 M8 10 L 20 13"/></svg><span class="ink ink-honest" role="img" aria-label="Handwritten note: be honest, I can take it"></span></span>
+      <div class="deck" id="deck" aria-live="polite"></div>
+      <div class="deck-actions" id="deck-actions">
+        <button class="btn btn-ghost" type="button" data-swipe="no"><i class="ph ph-x" aria-hidden="true"></i>Not for us</button>
+        <button class="btn btn-primary" type="button" data-swipe="yes"><i class="ph ph-check" aria-hidden="true"></i>We have this</button>
+      </div>
+      <p class="deck-count" id="deck-count"></p>
+    </div>
+    <form class="ask" id="ask" hidden>
+      <label class="ask-label" for="ask-input">Or ask about my experience in your own words</label>
+      <div class="ask-row">
+        <textarea id="ask-input" name="question" rows="2" maxlength="500" required placeholder="Have you scaled a team through hypergrowth?"></textarea>
+        <button class="btn btn-primary" type="submit"><i class="ph ph-sparkle" aria-hidden="true"></i>Ask</button>
+      </div>
+      <p class="ask-answer" id="ask-answer" aria-live="polite" hidden></p>
+      <p class="ask-note">An AI answers from what’s on this page only. It can be wrong, so book a call for the real answer.</p>
+    </form>
   </section>
 
   <section class="about reveal" id="about" aria-labelledby="about-h">
@@ -80,6 +100,9 @@
       <p>I’m Uwe Dauernheim, a software engineer, engineering leader, and lifelong builder based in Stockholm.</p>
       <p>Over the years, I’ve moved from backend engineering and software architecture into leading technical teams and organizations at companies including Voi, Grace Health, Northvolt, and Aris Machina. My work has taken me through urban mobility, women’s health, sustainable energy, advanced manufacturing, data, and AI.</p>
       <p>What connects those experiences is a desire to make difficult things useful: turning technical complexity into dependable products, helping talented people do their best work, and building organizations that can grow without losing clarity or humanity.</p>
+      <h3 class="about-sub" id="now-h">What I’m exploring now</h3>
+      <p>I’m taking time to train, travel, research emerging developments in AI, and think carefully about the next chapter of my career.</p>
+      <p>I’m particularly interested in engineering leadership where software and AI meet consequential, real world problems: AI native products, physical systems, advanced industry, health, sustainability, or sport.</p>
       <span class="ink ink-signature" role="img" aria-label="Signed, Uwe"></span>
     </div>
     <aside class="career" id="career" aria-labelledby="career-h">
@@ -91,10 +114,10 @@
         <li><a class="career-row" href="https://www.linkedin.com/company/voi-technology/"><img src="assets/logos/voi.png" alt="" width="40" height="40"><div><p class="role">VP of Software Engineering</p><p class="org">Voi · urban mobility</p></div><p class="yr">2019 to 2020</p></a></li>
         <li><a class="career-row" href="https://www.linkedin.com/company/getpfc/"><img src="assets/logos/pfc.png" alt="" width="40" height="40"><div><p class="role">Lead Technical Architect</p><p class="org">P.F.C. Personal Finance Co. · fintech</p></div><p class="yr">2016 to 2019</p></a></li>
         <li><a class="career-row" href="https://www.linkedin.com/company/getpfc/"><img src="assets/logos/betalo.png" alt="" width="40" height="40"><div><p class="role">Lead Technical Architect</p><p class="org">Betalo · payments</p></div><p class="yr">2016 to 2018</p></a></li>
-        <li><img src="assets/logos/sensible-code.png" alt="" width="40" height="40"><div><p class="role">Technical Architect</p><p class="org">The Sensible Code Company (ScraperWiki)</p></div><p class="yr">2015 to 2016</p></li>
+        <li><div class="career-row"><img src="assets/logos/sensible-code.png" alt="" width="40" height="40"><div><p class="role">Technical Architect</p><p class="org">The Sensible Code Company (ScraperWiki)</p></div><p class="yr">2015 to 2016</p></div></li>
         <li><a class="career-row" href="https://www.linkedin.com/company/spotify/"><img src="assets/logos/spotify.png" alt="" width="40" height="40"><div><p class="role">Senior Software Engineer, backend</p><p class="org">Spotify · search and charts</p></div><p class="yr">2013 to 2015</p></a></li>
         <li><a class="career-row" href="https://www.linkedin.com/company/klarna/"><img src="assets/logos/klarna.png" alt="" width="40" height="40"><div><p class="role">Development Line Manager</p><p class="org">Klarna · payments</p></div><p class="yr">2010 to 2013</p></a></li>
-        <li><a class="career-row" href="https://www.linkedin.com/school/kth/"><img src="assets/logos/kth.png" alt="" width="40" height="40"><div><p class="role">Education</p><p class="org">KTH Royal Institute of Technology</p></div><p class="yr"></p></a></li>
+        <li><a class="career-row" href="https://www.linkedin.com/school/kth/"><img src="assets/logos/kth.png" alt="" width="40" height="40"><div><p class="role">Education</p><p class="org">KTH Royal Institute of Technology</p></div></a></li>
       </ol>
       <a class="text-link" href="https://www.linkedin.com/in/uwedauernheim/">Full history on LinkedIn <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
     </aside>
@@ -121,31 +144,8 @@
     </div>
   </section>
 
-  <section class="match reveal" id="match" aria-labelledby="match-h">
-    <h2 class="section-title" id="match-h">Do you have one of these problems?</h2>
-    <p class="match-sub">Swipe right on the ones you recognise. Each one is a problem I have worked on before.</p>
-    <div class="deck-wrap">
-      <span class="margin-note note-honest"><svg class="note-arrow" viewBox="0 0 64 40" aria-hidden="true"><path d="M60 30 C 44 34, 22 28, 8 10 M8 10 L 7 23 M8 10 L 20 13"/></svg><span class="ink ink-honest" role="img" aria-label="Handwritten note: be honest, I can take it"></span></span>
-      <div class="deck" id="deck" aria-live="polite"></div>
-      <div class="deck-actions" id="deck-actions">
-        <button class="btn btn-ghost" type="button" data-swipe="no"><i class="ph ph-x" aria-hidden="true"></i>Not for us</button>
-        <button class="btn btn-primary" type="button" data-swipe="yes"><i class="ph ph-check" aria-hidden="true"></i>We have this</button>
-      </div>
-      <p class="deck-count" id="deck-count"></p>
-    </div>
-    <form class="ask" id="ask" hidden>
-      <label class="ask-label" for="ask-input">Or describe your problem in your own words</label>
-      <div class="ask-row">
-        <textarea id="ask-input" name="question" rows="2" maxlength="500" required placeholder="Our factory data lives in 14 systems and nobody trusts the dashboards."></textarea>
-        <button class="btn btn-primary" type="submit"><i class="ph ph-sparkle" aria-hidden="true"></i>Ask</button>
-      </div>
-      <p class="ask-answer" id="ask-answer" aria-live="polite" hidden></p>
-      <p class="ask-note">An AI answers from what’s on this page only. It can be wrong, so book a call for the real answer.</p>
-    </form>
-  </section>
-
-  <section class="tagline" aria-label="What connects my work">
-    <p class="tagline-text" id="tagline">Make difficult things useful, help people do their best work, and grow without losing clarity or humanity.</p>
+  <section class="tagline" aria-label="In short">
+    <p class="tagline-text" id="tagline">Curious by nature. Driven by people. Grounded in purpose.</p>
   </section>
 
   <section class="beyond reveal" aria-labelledby="beyond-h">
@@ -160,42 +160,44 @@
         <figure class="polaroid"><img src="assets/photos/cake.jpg" alt="A homemade Grand Theft Birthday cake with candles" width="480" height="480" loading="lazy"><figcaption>dad duty</figcaption></figure>
       </div>
     </div>
-    <div>
-      <h2 class="section-title">What I’m exploring now</h2>
-      <p>I’m taking time to train, travel, research emerging developments in AI, and think carefully about the next chapter of my career.</p>
-      <p>I’m particularly interested in engineering leadership where software and AI meet consequential, real world problems: AI native products, physical systems, advanced industry, health, sustainability, or sport.</p>
-    </div>
   </section>
 
   <section class="apps reveal" id="apps" aria-labelledby="apps-h">
     <div class="apps-head">
       <h2 class="section-title" id="apps-h">Apps</h2>
-      <p>Small tools for Mac, iPhone and the web. Most of them run entirely on your device.</p>
+      <p>Small tools for Mac, iPhone and the web that I build in my spare time. Most are free and run entirely on your device: Murmur, Lifelog and Narrate never upload what you open.</p>
     </div>
-    <div class="featured" id="featured" aria-live="polite"></div>
-    <div class="filters" id="filters" role="group" aria-label="Filter apps by platform"></div>
-    <div class="grid" id="grid" aria-live="polite"></div>
+    <figure class="apps-visual">
+      <div class="mosaic" id="mosaic"></div>
+      <span class="margin-note note-hands-on"><svg class="note-arrow" viewBox="0 0 64 40" aria-hidden="true"><path d="M60 30 C 44 34, 22 28, 8 10 M8 10 L 7 23 M8 10 L 20 13"/></svg><span class="ink ink-hands-on" role="img" aria-label="Handwritten note: how I stay hands-on"></span></span>
+    </figure>
+    <div class="apps-more">
+      <button class="btn btn-ghost" type="button" id="apps-toggle" aria-expanded="false" aria-controls="apps-all"><span data-closed>See all <span id="app-count">21</span> apps</span><span data-open hidden>Hide the app list</span><i class="ph ph-caret-down" aria-hidden="true"></i></button>
+    </div>
+    <div class="apps-all" id="apps-all" hidden>
+      <div class="filters" id="filters" role="group" aria-label="Filter apps by platform"></div>
+      <div class="grid" id="grid" aria-live="polite"></div>
+      <p class="apps-note">Found a bug or want a feature? Open an issue on the app’s GitHub repository.</p>
+      <div class="experiments" id="experiments"></div>
+    </div>
     <a class="spotlight" href="https://havewecuredcanceryet.org">
       <div class="spotlight-copy">
-        <p class="eyebrow">Side project</p>
         <h3>Have we cured cancer yet? No.</h3>
-        <p>A running, sourced log of what we point AI at instead of cancer. Not anti AI. Pro aim.</p>
+        <p>My side project: a running, sourced log of what we point AI at instead of cancer. Not anti AI. Pro aim.</p>
         <span class="text-link">Read the log <i class="ph ph-arrow-right" aria-hidden="true"></i></span>
       </div>
       <img src="https://havewecuredcanceryet.org/og.png" alt="The havewecuredcanceryet.org front page, which answers No" loading="lazy" width="1200" height="630">
     </a>
-    <div class="experiments" id="experiments"></div>
   </section>
 
   <section class="faq reveal" id="faq" aria-labelledby="faq-h">
     <h2 class="section-title" id="faq-h">Questions people ask</h2>
     <div class="faq-list">
       <details><summary>What kind of role are you looking for?<i class="ph ph-plus" aria-hidden="true"></i></summary><p>Engineering leadership where software and AI meet consequential, real world problems: AI native products, physical systems, advanced industry, health, sustainability, or sport. Typically Head of Engineering, CTO, or senior engineering management.</p></details>
+      <details><summary>Are you available?<i class="ph ph-plus" aria-hidden="true"></i></summary><p>Yes. My last role, Head of Engineering at Aris Machina, ended in 2026. I’m using the time to train, travel and research AI while I choose the next chapter, and I’m open to conversations now.</p></details>
       <details><summary>Where do you want to work?<i class="ph ph-plus" aria-hidden="true"></i></summary><p>Stockholm. On site, hybrid, or remote all work for me.</p></details>
+      <details><summary>How do you work with founders and leadership teams?<i class="ph ph-plus" aria-hidden="true"></i></summary><p>I translate between business, product, people and technology. I share roadmaps, priorities and trade-offs together with the reasons behind them, and I keep engineering, product, design and business working on the same problem.</p></details>
       <details><summary>What is your technical background?<i class="ph ph-plus" aria-hidden="true"></i></summary><p>Backend engineering and software architecture. Distributed payment systems in Erlang at Klarna, search and charts at Spotify, payment platforms at Betalo and P.F.C., then data and AI platforms at Northvolt and Aris Machina.</p></details>
-      <details><summary>Are your apps free?<i class="ph ph-plus" aria-hidden="true"></i></summary><p>Most are free downloads from GitHub or open straight in the browser. A few are early builds.</p></details>
-      <details><summary>Do your apps collect my data?<i class="ph ph-plus" aria-hidden="true"></i></summary><p>Most of them run entirely on your device. Murmur, Lifelog and Narrate never upload what you open.</p></details>
-      <details><summary>How do I report a bug or suggest a feature?<i class="ph ph-plus" aria-hidden="true"></i></summary><p>Open an issue on the app’s GitHub repository, or send me a message on LinkedIn.</p></details>
       <details><summary>Can we just talk?<i class="ph ph-plus" aria-hidden="true"></i></summary><p>Yes. <a href="https://cal.com/uwe-dauernheim/intro">Pick a free 20 minute slot</a> in my calendar, no email back and forth needed.</p></details>
     </div>
   </section>

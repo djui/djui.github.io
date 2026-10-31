@@ -20,22 +20,24 @@ const wrap = (app, cls, inner) => app.url
   : `<div class="${cls} is-static" style="--tint:${app.tint}">${inner}</div>`;
 
 function renderMosaic(apps) {
-  const withIcons = apps.filter(a => a.icon);
-  document.getElementById("mosaic").innerHTML = withIcons.slice(0, 9).map(a =>
-    `<span class="mosaic-tile"><img src="${esc(asset(a.icon))}" alt="${esc(a.name)}" width="96" height="96"></span>`).join("");
+  const lead = shuffle(apps.filter(a => a.featured === "lead" && a.icon));
+  const rest = shuffle(apps.filter(a => a.featured && a.featured !== "lead" && a.icon));
+  document.getElementById("mosaic").innerHTML = [...lead, ...rest].slice(0, 9).map(a =>
+    `<a class="mosaic-tile" href="${esc(a.url)}" title="${esc(a.name)}: ${esc(a.tagline)}"><img src="${esc(asset(a.icon))}" alt="${esc(a.name)}" width="96" height="96"></a>`).join("");
   document.getElementById("app-count").textContent = apps.length;
 }
 
-function renderFeatured(apps) {
-  const lead = shuffle(apps.filter(a => a.featured === "lead"))[0];
-  const rest = shuffle(apps.filter(a => a.featured && a !== lead)).slice(0, 2);
-  document.getElementById("featured").innerHTML = [lead, ...rest].map(a => wrap(a, "feat", `
-    <span class="feat-stage">${icon(a)}</span>
-    <span class="feat-body">
-      <span class="feat-name">${esc(a.name)}</span>
-      <span class="feat-text">${esc(a.tagline)}</span>
-      <span class="feat-meta">${tags(a)}${a.cta ? `<span class="feat-cta">${esc(a.cta)}<i class="ph ph-arrow-right" aria-hidden="true"></i></span>` : ""}</span>
-    </span>`)).join("");
+function setupAppsToggle() {
+  const toggle = document.getElementById("apps-toggle");
+  const all = document.getElementById("apps-all");
+  toggle.addEventListener("click", () => {
+    const open = all.hidden;
+    all.hidden = !open;
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.querySelector("[data-closed]").hidden = open;
+    toggle.querySelector("[data-open]").hidden = !open;
+    toggle.classList.toggle("is-open", open);
+  });
 }
 
 function renderGrid(apps, filter) {
@@ -66,12 +68,14 @@ function renderExperiments(items) {
 }
 
 function renderSkeletons() {
-  document.getElementById("featured").innerHTML = Array(3).fill(`<div class="feat skeleton"><span class="feat-stage"></span><span class="feat-body"><span class="sk-line"></span><span class="sk-line short"></span></span></div>`).join("");
+  document.getElementById("mosaic").innerHTML = Array(9).fill(`<span class="mosaic-tile skeleton"></span>`).join("");
   document.getElementById("grid").innerHTML = Array(6).fill(`<div class="card skeleton"><span class="icon"></span><span class="card-body"><span class="sk-line"></span><span class="sk-line short"></span></span></div>`).join("");
 }
 
 function renderError() {
-  document.getElementById("featured").innerHTML = "";
+  document.getElementById("mosaic").innerHTML = "";
+  document.getElementById("apps-all").hidden = false;
+  document.getElementById("apps-toggle").hidden = true;
   document.getElementById("grid").innerHTML = `<div class="empty error" role="alert"><i class="ph ph-warning-circle" aria-hidden="true"></i><p>The app list didn’t load. Check your connection and reload, or browse my repositories on GitHub.</p><a class="btn btn-sm btn-ghost" href="https://github.com/djui?tab=repositories">Open GitHub</a></div>`;
 }
 
@@ -95,15 +99,17 @@ function setupNav() {
   menu.addEventListener("click", e => { if (e.target.closest("a")) setOpen(false); });
   addEventListener("keydown", e => { if (e.key === "Escape") setOpen(false); });
 
+  // Watch every section, so the highlight clears in sections the nav doesn't list.
   const links = [...document.querySelectorAll(".nav-links a")];
-  const sections = links.map(a => document.querySelector(a.getAttribute("href")));
   const io = new IntersectionObserver(entries => {
     entries.forEach(en => {
       if (!en.isIntersecting) return;
-      links.forEach(a => a.toggleAttribute("aria-current", a.getAttribute("href") === "#" + en.target.id));
+      const ids = [en.target.id, ...[...en.target.querySelectorAll("[id]")].map(el => el.id)].map(id => "#" + id);
+      const hit = links.find(a => ids.includes(a.getAttribute("href")));
+      links.forEach(a => a.toggleAttribute("aria-current", a === hit));
     });
   }, { rootMargin: "-45% 0px -50% 0px" });
-  sections.forEach(s => s && io.observe(s));
+  document.querySelectorAll("main > section, #career").forEach(s => io.observe(s));
 }
 
 function setupReveals() {
@@ -134,15 +140,16 @@ const ASK_URL = "https://ask-uwe.uwe-af1.workers.dev";
 const BOOKING_URL = document.querySelector(".nav-cta").href;
 const bookingLink = note => `${BOOKING_URL}?notes=${encodeURIComponent(note)}`;
 
+// Each card is a problem a founder might have; `where` and `story` are the proof that I've worked on it.
 const PROBLEMS = [
-  { k: "Payments", big: "Money has to move, every single time", logo: "klarna", where: "Klarna · 2010 to 2013", story: "Distributed payment systems in Erlang, then leading the development line." },
-  { k: "Scale", big: "Search that millions of people use every day", logo: "spotify", where: "Spotify · 2013 to 2015", story: "Backend engineer on search and charts." },
-  { k: "Fintech", big: "A payments platform built from scratch", logo: "pfc", where: "Betalo and P.F.C. · 2016 to 2019", story: "Lead technical architect for a payment platform and a neobank." },
-  { k: "Hypergrowth", big: "A scale-up growing faster than its systems", logo: "voi", where: "Voi · 2019 to 2020", story: "VP of Software Engineering in urban mobility." },
-  { k: "Health", big: "A health product people trust with private questions", logo: "grace-health", where: "Grace Health · 2020 to 2023", story: "Head of Technology for a women’s health app." },
-  { k: "Industry", big: "Software and data on a factory floor", logo: "northvolt", where: "Northvolt · 2023 to 2025", story: "Senior engineering manager for manufacturing systems and data." },
-  { k: "AI", big: "AI that does real work, not demos", logo: "aris-machina", where: "Aris Machina · 2025 to 2026", story: "Head of Engineering, AI for manufacturing." },
-  { k: "Builder", big: "A leader who still ships code", logo: null, where: "21 apps on the side", story: "Mac, iPhone and web apps, most of them running fully on device." },
+  { k: "Payments", big: "Our payments can’t afford to fail", logo: "klarna", where: "Klarna · 2010 to 2013", story: "I built distributed payment systems in Erlang, then led the development line." },
+  { k: "Scale", big: "Our product has to work for millions of people", logo: "spotify", where: "Spotify · 2013 to 2015", story: "I was a backend engineer on search and charts." },
+  { k: "Fintech", big: "We need a payments platform built from scratch", logo: "pfc", where: "Betalo and P.F.C. · 2016 to 2019", story: "I was lead technical architect for a payment platform and a neobank." },
+  { k: "Hypergrowth", big: "We’re growing faster than our systems", logo: "voi", where: "Voi · 2019 to 2020", story: "I was VP of Software Engineering in urban mobility." },
+  { k: "Health", big: "People trust us with private questions", logo: "grace-health", where: "Grace Health · 2020 to 2023", story: "I was Head of Technology for a women’s health app." },
+  { k: "Industry", big: "Our software has to run a factory floor", logo: "northvolt", where: "Northvolt · 2023 to 2025", story: "I was senior engineering manager for manufacturing systems and data." },
+  { k: "AI", big: "We need AI that does real work, not demos", logo: "aris-machina", where: "Aris Machina · 2025 to 2026", story: "I was Head of Engineering, building AI for manufacturing." },
+  { k: "Hands-on", big: "We need a leader who still ships code", logo: null, where: "21 apps on the side", story: "I build Mac, iPhone and web apps, most of them running fully on device." },
 ];
 
 function setupDeck() {
@@ -221,7 +228,7 @@ function setupDeck() {
   deck.addEventListener("click", e => { if (e.target.closest("[data-restart]")) { i = 0; liked = []; render(); } });
   addEventListener("keydown", e => {
     if (!deck.closest("section").matches(":hover, :focus-within")) return;
-    if (e.target.closest("input, textarea, select, [contenteditable]")) return;
+    if (e.target.closest?.("input, textarea, select, [contenteditable]")) return;
     if (e.key === "ArrowRight") decide(true);
     if (e.key === "ArrowLeft") decide(false);
   });
@@ -275,12 +282,12 @@ setupTagline();
 setupDeck();
 setupAsk();
 setupInk();
+setupAppsToggle();
 renderSkeletons();
 fetch(ROOT + "apps.json")
   .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
   .then(({ apps, experiments }) => {
     renderMosaic(apps);
-    renderFeatured(apps);
     renderFilters(apps);
     renderGrid(apps, "all");
     renderExperiments(experiments);

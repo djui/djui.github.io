@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "gradient-text",
+        "value": "*",
+        "files": [
+          "assets/site/site.css"
+        ],
+        "createdAt": "2026-10-31T11:35:49.682Z",
+        "reason": "incumbent design: black-to-grey ink fade on display headings, documented in DESIGN.md (Colors); not user-confirmed"
+      }
+    ]
+  }
+}

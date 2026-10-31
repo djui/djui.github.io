@@ -9,7 +9,7 @@ colors:
   ink: "#121212"
   ink-hover: "#2E2E2E"
   graphite: "#55534E"
-  pencil: "#8C8A84"
+  pencil: "#6F6D67"
   rule: "rgba(18, 18, 18, 0.09)"
   rule-strong: "rgba(18, 18, 18, 0.2)"
   pen-blue: "#2F56C4"
@@ -166,7 +166,7 @@ A monochrome ink-on-paper palette with a single pen-blue hue reserved for the hu
 - **Pencil Shade** (`shade`): hover fills, tags, the Ask answer, skeletons.
 - **Stage Grey** (`stage`): the backdrop behind featured app icons.
 - **Graphite** (`graphite`): secondary text and body prose after the first paragraph.
-- **Pencil** (`pencil`): tertiary text: eyebrows, labels, captions, years, footer.
+- **Pencil** (`pencil`): tertiary text: eyebrows, labels, captions, years, footer. It is the lightest grey allowed for text: 4.95:1 on paper, so it stays readable at 12px.
 - **Hairline Rule** (`rule`) and **Firm Rule** (`rule-strong`): borders and dividers; the strong rule is the hover state.
 - **Error** (`danger`): error states only.
 

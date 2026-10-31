@@ -36,7 +36,7 @@ Target roles: engineering leadership where software and AI meet consequential, r
 - External dependencies: Google Fonts and Phosphor icons via unpkg; the Worker is the only backend.
 - "No cookies, no tracking" is a public promise in the footer; keep it true.
 - The Ask bot must only state facts already public in `worker/src/context.md`; it answers like a colleague and says "I don't know" plainly.
-- The old Jekyll blog (`_posts`, `_layouts`, `_includes`, `assets/themes`, `archive.html`, `atom.xml`, etc.) is dead weight, not part of the product. Ignore it; removing it later is fine.
+- `.nojekyll` is set, so GitHub Pages serves files as they are. The old Jekyll blog was removed in 2026; it lives on in git history only.
 
 ## Brand Commitments
 

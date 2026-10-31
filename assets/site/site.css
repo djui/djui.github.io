@@ -22,6 +22,7 @@ p { text-wrap: pretty; margin: 0; }
 a { color: inherit; }
 img { display: block; max-width: 100%; }
 ul, ol { list-style: none; margin: 0; padding: 0; }
+[hidden] { display: none !important; }
 :focus-visible { outline: 2px solid var(--focus, var(--accent)); outline-offset: 2px; border-radius: 4px; }
 
 .skip {
@@ -265,8 +266,8 @@ a.card:active { transform: scale(0.98); }
 .footer a:hover { color: var(--text); }
 
 /* Scroll reveal */
-.reveal { opacity: 0; transform: translateY(32px); transition: opacity 700ms var(--ease), transform 700ms var(--ease); }
-.reveal.is-in { opacity: 1; transform: none; }
+.js-reveal .reveal { opacity: 0; transform: translateY(32px); transition: opacity 700ms var(--ease), transform 700ms var(--ease); }
+.js-reveal .reveal.is-in { opacity: 1; transform: none; }
 
 @media (max-width: 1024px) {
   .hero { grid-template-columns: 1fr; }
@@ -295,7 +296,7 @@ a.card:active { transform: scale(0.98); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-property: opacity, color, background-color, border-color !important; }
-  .reveal { transform: none; }
+  .js-reveal .reveal { transform: none; }
   .menu li { transform: none; }
   a.feat:hover, a.card:hover, .spotlight:hover, .btn-primary:hover, .mosaic-tile:hover { transform: none; }
   .skeleton .feat-stage, .skeleton .icon, .sk-line { animation: none; }
@@ -307,7 +308,7 @@ a.card:active { transform: scale(0.98); }
 :root {
   --font: "Manrope", system-ui, sans-serif;
   --bg: #FAFAF7; --surface: #FFFFFF; --surface-2: #F0EFEA; --stage: #F4F3EE;
-  --text: #121212; --text-2: #55534E; --text-3: #8C8A84;
+  --text: #121212; --text-2: #55534E; --text-3: #6F6D67;
   --border: rgba(18, 18, 18, 0.09); --border-strong: rgba(18, 18, 18, 0.2);
   --accent: #121212; --accent-hover: #2E2E2E; --on-accent: #FFFFFF;
   --h-from: #000000; --h-to: #666666;

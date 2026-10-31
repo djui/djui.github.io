@@ -108,7 +108,9 @@ function setupNav() {
 
 function setupReveals() {
   const els = document.querySelectorAll(".reveal");
-  if (!("IntersectionObserver" in window)) { els.forEach(el => el.classList.add("is-in")); return; }
+  if (!("IntersectionObserver" in window)) return;
+  // Sections only start hidden once this script runs, so the page still reads if it fails.
+  document.documentElement.classList.add("js-reveal");
   const io = new IntersectionObserver(entries => entries.forEach(en => {
     if (en.isIntersecting) { en.target.classList.add("is-in"); io.unobserve(en.target); }
   }), { rootMargin: "0px 0px -10% 0px" });
@@ -153,9 +155,10 @@ function setupDeck() {
     busy = false;
     if (i >= PROBLEMS.length) return renderResult();
     actions.hidden = false;
-    deck.innerHTML = PROBLEMS.slice(i, i + 3).reverse().map(p => `
-      <article class="swipe-card">
-        <span class="stamp y">We have this</span><span class="stamp n">Not for us</span>
+    const stack = PROBLEMS.slice(i, i + 3).reverse();
+    deck.innerHTML = stack.map((p, n) => `
+      <article class="swipe-card"${n < stack.length - 1 ? ` aria-hidden="true"` : ""}>
+        <span class="stamp y" aria-hidden="true">We have this</span><span class="stamp n" aria-hidden="true">Not for us</span>
         <span class="k">${esc(p.k)}</span>
         <h3 class="big">${esc(p.big)}</h3>
         <span class="where">${p.logo ? `<img src="${ROOT}assets/logos/${p.logo}.png" alt="" width="24" height="24">` : ""}${esc(p.where)}</span>
@@ -166,6 +169,7 @@ function setupDeck() {
   };
 
   const renderResult = () => {
+    const hadFocus = actions.contains(document.activeElement);
     actions.hidden = true;
     count.textContent = "";
     const note = liked.length ? `Swiped right on: ${liked.join(", ")}.` : "";
@@ -175,6 +179,8 @@ function setupDeck() {
       <a class="btn btn-primary" href="${esc(note ? bookingLink(note) : BOOKING_URL)}"><i class="ph ph-calendar-check" aria-hidden="true"></i>Book a 20 minute call</a>
       <button class="btn btn-ghost" type="button" data-restart>Start over</button>
     </div>`;
+    // The swipe buttons just disappeared; keep keyboard users on the next step.
+    if (hadFocus) deck.querySelector(".btn-primary").focus();
   };
 
   const decide = yes => {
@@ -215,6 +221,7 @@ function setupDeck() {
   deck.addEventListener("click", e => { if (e.target.closest("[data-restart]")) { i = 0; liked = []; render(); } });
   addEventListener("keydown", e => {
     if (!deck.closest("section").matches(":hover, :focus-within")) return;
+    if (e.target.closest("input, textarea, select, [contenteditable]")) return;
     if (e.key === "ArrowRight") decide(true);
     if (e.key === "ArrowLeft") decide(false);
   });

@@ -35,6 +35,15 @@
         "value": "2px",
         "createdAt": "2026-10-31T11:56:09.894Z",
         "reason": "rounded ends of the 2px-tall hamburger bars, not a surface radius"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-31T11:57:37.701Z",
+        "reason": "false positive: .faq-list border-top is a section divider; each <summary> has 24px vertical padding (both assessments in the 2026-10-31 critique agreed)"
       }
     ]
   }

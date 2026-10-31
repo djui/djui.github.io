@@ -20,6 +20,21 @@
         ],
         "createdAt": "2026-10-31T11:47:11.310Z",
         "reason": "incumbent design: black-to-grey ink fade on display headings (styled in site.css), documented in DESIGN.md (Colors); not user-confirmed"
+      },
+      {
+        "rule": "gradient-text",
+        "value": "*",
+        "files": [
+          "404.html"
+        ],
+        "createdAt": "2026-10-31T11:56:09.870Z",
+        "reason": "incumbent design: ink fade on display headings, documented in DESIGN.md; not user-confirmed"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "2px",
+        "createdAt": "2026-10-31T11:56:09.894Z",
+        "reason": "rounded ends of the 2px-tall hamburger bars, not a surface radius"
       }
     ]
   }

@@ -296,6 +296,10 @@ a.card:active { transform: scale(0.98); }
 }
 @media (max-width: 400px) {
   .hero-title { font-size: 30px; line-height: 36px; }
+  .margin-note .ink { max-width: calc(100vw - 96px); }
+}
+@media (max-width: 359px) {
+  .nav-brand { display: none; }
 }
 /* Paper: Manrope on warm white, centered editorial hero, list style apps */
 :root {

@@ -26,7 +26,8 @@ Target roles: engineering leadership where software and AI meet consequential, r
 
 ## Operating Context
 
-- Single long page (`index.html`) with sections: hero, About + Career, How I work, a swipeable problem deck ("Do you have one of these problems?"), Ask box, Beyond the job title (polaroids), What I'm exploring now, Apps (featured, platform filters, grid, side-project spotlight, experiments), FAQ, closing call to action.
+- Single long page (`index.html`) with sections: hero (role, last job, availability), a swipeable problem deck ("Do you have one of these problems?") with the Ask box, About (with What I'm exploring now) + Career, How I work, tagline, Beyond the job title (polaroids), Apps (icon mosaic, then a "See all 21 apps" toggle with filters and grid; side-project spotlight), hiring FAQ, closing call to action.
+- Light and dark themes follow the visitor's system setting.
 - Apps are data-driven from `apps.json` (id, name, tagline, platforms, url, cta, icon, tint, featured), rendered by `assets/site/site.js`.
 - The Ask box calls a Cloudflare Worker (`worker/`) that answers with Claude Haiku from `worker/src/context.md` only, at most 3 sentences, rate-limited; it stays hidden until `ASK_URL` is set.
 

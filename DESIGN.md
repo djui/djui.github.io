@@ -5,7 +5,6 @@ colors:
   paper: "#FAFAF7"
   sheet: "#FFFFFF"
   shade: "#F0EFEA"
-  stage: "#F4F3EE"
   ink: "#121212"
   ink-hover: "#2E2E2E"
   graphite: "#55534E"
@@ -17,6 +16,14 @@ colors:
   stamp-green: "#1F7A50"
   stamp-red: "#A8463A"
   danger: "#D14343"
+  night-paper: "#1A1915"
+  night-sheet: "#23221D"
+  night-shade: "#2E2C27"
+  night-ink: "#EDEBE4"
+  night-graphite: "#B8B5AC"
+  night-pencil: "#9A978F"
+  night-pen-blue: "#8FA8F0"
+  night-photo-frame: "#ECEAE3"
 typography:
   display:
     fontFamily: "Manrope, system-ui, sans-serif"
@@ -110,10 +117,6 @@ components:
     backgroundColor: "{colors.sheet}"
     rounded: "{rounded.card}"
     padding: "24px"
-  card-feature:
-    backgroundColor: "{colors.sheet}"
-    rounded: "{rounded.big}"
-    padding: "24px"
   nav:
     backgroundColor: "rgba(255, 255, 255, 0.72)"
     rounded: "{rounded.pill}"
@@ -135,7 +138,7 @@ A working notebook left open on a desk: warm white pages, near-black ink, and th
 
 Density is low and the rhythm is vertical. Every block sits on the center axis, sections breathe on 96px of padding, and color is almost absent: ink, graphite and pencil greys on paper, with pen blue as the only true hue in the system. Depth comes from paper itself: sheets with hairline borders, and real shadows only on physical objects such as a polaroid or a card you can pick up and swipe.
 
-Light is the only theme today. A dark theme is planned but not designed; see Colors.
+At night the same notebook sits under a lamp: a dark theme follows the system setting, with paper and ink swapped and pen blue still the only hue (see Colors).
 
 **Key Characteristics:**
 - Warm white paper, near-black ink, one blue pen.
@@ -164,9 +167,8 @@ A monochrome ink-on-paper palette with a single pen-blue hue reserved for the hu
 - **Desk Paper** (`paper`): page background.
 - **Fresh Sheet** (`sheet`): raised surfaces: cards, nav, inputs, polaroid frames.
 - **Pencil Shade** (`shade`): hover fills, tags, the Ask answer, skeletons.
-- **Stage Grey** (`stage`): the backdrop behind featured app icons.
 - **Graphite** (`graphite`): secondary text and body prose after the first paragraph.
-- **Pencil** (`pencil`): tertiary text: eyebrows, labels, captions, years, footer. It is the lightest grey allowed for text: 4.95:1 on paper, so it stays readable at 12px.
+- **Pencil** (`pencil`): tertiary text: labels, captions, years, footer. It is the lightest grey allowed for text: 4.95:1 on paper, so it stays readable at 12px.
 - **Hairline Rule** (`rule`) and **Firm Rule** (`rule-strong`): borders and dividers; the strong rule is the hover state.
 - **Error** (`danger`): error states only.
 
@@ -177,7 +179,16 @@ The display headings fade from pure black (#000000) to mid grey (#666666), left 
 
 **The Ink Is the Accent Rule.** No brand color for buttons or links. Emphasis comes from ink weight and contrast, not hue.
 
-**Dark Mode Is Open.** A dark theme is planned but undecided. When it lands it must redefine these same token names on `[data-theme="dark"]` and keep the notebook metaphor (ink and paper inverted, pen still the only hue). Until then, don't hand-tune one-off dark values.
+### Night desk (dark theme)
+Under `prefers-color-scheme: dark` the CSS redefines the same custom properties; no component has its own dark rules.
+- **Lamp-lit Desk** (`night-paper`), **Night Sheet** (`night-sheet`), **Night Shade** (`night-shade`): background, raised surfaces, hover fills.
+- **Chalk Ink** (`night-ink`): text and the primary button fill, with desk-dark text on it. The ink-is-the-accent rule holds in both themes.
+- **Night Graphite** (`night-graphite`) and **Night Pencil** (`night-pencil`, 6:1): secondary and tertiary text.
+- **Night Pen** (`night-pen-blue`): handwriting on the dark desk.
+- **Photo frame** (`night-photo-frame`): polaroids stay paper-light in both themes, so their captions keep the daylight pen blue.
+- Rules become `rgba(237, 235, 228, 0.1 / 0.24)`, shadows turn pure black, tape dims to 42%, and the stamps lighten (#5CC08E, #E58A7C).
+
+**The Same Names Rule.** Themes only redefine tokens. If a component needs a colour, it gets a token first, so the night desk can't drift from the day.
 
 ## Typography
 
@@ -190,10 +201,10 @@ The display headings fade from pure black (#000000) to mid grey (#666666), left 
 - **Display** (600, 60px → 36px on mobile → 30px under 400px, line-height 1): hero statement only, with the ink fade gradient.
 - **Statement** (600, 48px → 36px, line-height 1, -0.03em): the word-by-word tagline reveal and the closing call (36px).
 - **Headline** (600, 36px/40px → 30px/36px, -0.02em): section titles, spotlight titles.
-- **Title** (600, 20px/28px): card headings ("How I work"). Feature names and FAQ questions use 18px/28px at 600.
+- **Title** (600, 20px/28px): card headings ("How I work"). FAQ questions use 18px/28px at 600.
 - **Body large** (400, 18px/28px): About prose, section intros, FAQ.
 - **Body** (400, 16px/24px): default text and buttons (600). Reading measure 680px.
-- **Small** (500 or 600, 14px/20px): nav, chips, eyebrows, card text, captions.
+- **Small** (500 or 600, 14px/20px): nav, chips, card text, captions.
 - **Label** (600, 12px/16px, 0.08em, uppercase): "Previously at", career heading, swipe-card kicker.
 
 ### Named Rules
@@ -207,7 +218,9 @@ A single centered column. Sections are capped at 1152px with 24px gutters (16px 
 
 Vertical rhythm is a 4px base stepping 4, 8, 12, 16, 24, 32, 48, 64, 96. Sections sit on 96px top and bottom (64px on mobile); the hero opens with 160px of top space (128px mobile) to clear the floating nav.
 
-Grids wrap from the center: career entries and app cards use flex-wrap with `justify-content: center`, so a short last row centers instead of hugging the left. Columns step 3 → 2 → 1 at 1024px and 768px. The app-icon mosaic shows 9, 5, then 3 tiles, with even tiles dropped 24px to stagger the row.
+Grids wrap from the center: career entries and app cards use flex-wrap with `justify-content: center`, so a short last row centers instead of hugging the left. Columns step 3 → 2 → 1 at 1024px and 768px. The app-icon mosaic shows 9, then 5, then 6 tiles (two rows on phones), with even tiles dropped 24px to stagger the row on wider screens.
+
+The page leads with the hiring case: hero, problem deck, About, How I work, tagline, Beyond, Apps, FAQ, closing call. Secondary detail hides behind disclosure: the full app grid opens from a "See all 21 apps" button, and FAQ answers are collapsed.
 
 Breakpoints: 400px (smallest display size), 768px (mobile: nav collapses, everything single column), 1024px (tablet: two columns), 1200px (margin notes leave the flow and hang in the right margin).
 
@@ -224,7 +237,7 @@ Paper is flat. Surfaces are sheets: white on warm white with a hairline rule, an
 
 ## Shapes
 
-Soft but not bubbly. Buttons are 8px, list cards and inputs 16px, large sheets (feature cards, spotlight, swipe cards) 24px, app icons 12–24px depending on size, company logos 8–12px. Pills (9999px) are reserved for the floating nav, nav links, chips and tags. Polaroids are the exception: square corners and a deliberate tilt (-4° to 3.5°), with rotated tape at the top. Margin notes are rotated 2–6° too. Straight, centered type next to slightly crooked handmade things is the system's signature tension.
+Soft but not bubbly. Buttons are 8px, list cards and inputs 16px, large sheets (spotlight, swipe cards) 24px, app icons 12–24px depending on size, company logos 8–12px. Pills (9999px) are reserved for the floating nav, nav links, chips and tags. Polaroids are the exception: square corners and a deliberate tilt (-4° to 3.5°), with rotated tape at the top. Margin notes are rotated 2–6° too. Straight, centered type next to slightly crooked handmade things is the system's signature tension.
 
 ## Components
 
@@ -240,8 +253,8 @@ Quiet and confident: ink, not color.
 - **State:** selected chips invert to an ink fill with paper text (`aria-pressed`).
 
 ### Cards / Containers
-- **Corner Style:** 16px for app cards, 24px for feature cards, spotlight and swipe cards.
-- **Background:** fresh sheet on desk paper; featured cards put the 96px icon on a stage-grey band (192px tall).
+- **Corner Style:** 16px for app cards, 24px for the spotlight and swipe cards.
+- **Background:** fresh sheet on desk paper.
 - **Shadow Strategy:** flat (see Elevation); hover firms the border and lifts 2–4px.
 - **Border:** 1px hairline rule.
 - **Internal Padding:** 24px (cards), 32px (spotlight), 28px (swipe cards).
@@ -252,7 +265,7 @@ Quiet and confident: ink, not color.
 - **Answer:** shown on pencil shade, 16px 20px padding; loading state uses pencil text.
 
 ### Navigation
-A floating frosted pill fixed 16px from the top: name on the left, 14px links in graphite (ink + shade fill when current), and a small pill "Book a call" button. Under 768px the links collapse to a two-line toggle that morphs into an X and opens a full-screen frosted menu with 30px links that rise in.
+A floating frosted pill fixed 16px from the top: name on the left, 14px links in graphite (ink + shade fill when current, cleared in sections the nav doesn't list), and a small pill "Book a call" button. Under 768px the links collapse to a two-line toggle that morphs into an X and opens a full-screen frosted menu with 30px links that rise in; "Book a call" stays visible next to it.
 
 ### Handwritten Margin Note (signature)
 Handwriting is drawn from PNG masks filled with `currentColor`, so it always takes the pen-blue (or ink) color. Each note pairs with a hand-drawn SVG arrow (2px round stroke) pointing at what it annotates, and is rotated a few degrees. Notes and the signature wipe in left to right like a pen stroke (1.6s) when scrolled into view. On wide screens (≥1200px) notes hang in the right margin; below that they sit in the flow.
@@ -279,4 +292,5 @@ A stack of 24px-radius sheets with the picked-up shadow; the top card drags (gra
 - **Don't** load a second typeface or use Manrope above 600.
 - **Don't** fake handwriting with a script font; use real handwriting assets.
 - **Don't** left-align a section in isolation; the composition is centered throughout.
-- **Don't** ship one-off dark-mode colors before the dark theme is designed.
+- **Don't** give a component its own dark-mode colours; add or reuse a token that both themes define.
+- **Don't** put a small label (eyebrow) above a heading; the heading carries its own weight.

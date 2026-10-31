@@ -1,50 +1,214 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-31T00:00:00Z",
+  "generatedAt": "2026-10-31T12:00:00Z",
   "title": "Design System: Uwe Dauernheim",
   "extensions": {
     "colorMeta": {
-      "paper": { "role": "neutral", "displayName": "Desk Paper", "tonalRamp": ["#2A2A27", "#45443F", "#65635D", "#8C8A84", "#B5B3AC", "#D9D7D0", "#F0EFEA", "#FAFAF7"] },
-      "sheet": { "role": "neutral", "displayName": "Fresh Sheet" },
-      "shade": { "role": "neutral", "displayName": "Pencil Shade" },
-      "stage": { "role": "neutral", "displayName": "Stage Grey" },
-      "ink": { "role": "primary", "displayName": "Notebook Ink", "tonalRamp": ["#121212", "#2E2E2E", "#45443F", "#55534E", "#6E6C66", "#8C8A84", "#B5B3AC", "#E2E1DC"] },
-      "ink-hover": { "role": "primary", "displayName": "Pressed Ink" },
-      "graphite": { "role": "neutral", "displayName": "Graphite" },
-      "pencil": { "role": "neutral", "displayName": "Pencil" },
-      "rule": { "role": "neutral", "displayName": "Hairline Rule" },
-      "rule-strong": { "role": "neutral", "displayName": "Firm Rule" },
-      "pen-blue": { "role": "secondary", "displayName": "Ballpoint Blue", "tonalRamp": ["#0F1F4D", "#18307A", "#2241A0", "#2F56C4", "#5576D2", "#7F98DF", "#B0C0EC", "#E2E8F8"] },
-      "tape": { "role": "tertiary", "displayName": "Masking Tape" },
-      "stamp-green": { "role": "tertiary", "displayName": "Approval Green" },
-      "stamp-red": { "role": "tertiary", "displayName": "Correction Red" },
-      "danger": { "role": "error", "displayName": "Error" }
+      "paper": {
+        "role": "neutral",
+        "displayName": "Desk Paper",
+        "tonalRamp": [
+          "#2A2A27",
+          "#45443F",
+          "#65635D",
+          "#8C8A84",
+          "#B5B3AC",
+          "#D9D7D0",
+          "#F0EFEA",
+          "#FAFAF7"
+        ]
+      },
+      "sheet": {
+        "role": "neutral",
+        "displayName": "Fresh Sheet"
+      },
+      "shade": {
+        "role": "neutral",
+        "displayName": "Pencil Shade"
+      },
+      "ink": {
+        "role": "primary",
+        "displayName": "Notebook Ink",
+        "tonalRamp": [
+          "#121212",
+          "#2E2E2E",
+          "#45443F",
+          "#55534E",
+          "#6E6C66",
+          "#8C8A84",
+          "#B5B3AC",
+          "#E2E1DC"
+        ]
+      },
+      "ink-hover": {
+        "role": "primary",
+        "displayName": "Pressed Ink"
+      },
+      "graphite": {
+        "role": "neutral",
+        "displayName": "Graphite"
+      },
+      "pencil": {
+        "role": "neutral",
+        "displayName": "Pencil"
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Hairline Rule"
+      },
+      "rule-strong": {
+        "role": "neutral",
+        "displayName": "Firm Rule"
+      },
+      "pen-blue": {
+        "role": "secondary",
+        "displayName": "Ballpoint Blue",
+        "tonalRamp": [
+          "#0F1F4D",
+          "#18307A",
+          "#2241A0",
+          "#2F56C4",
+          "#5576D2",
+          "#7F98DF",
+          "#B0C0EC",
+          "#E2E8F8"
+        ]
+      },
+      "tape": {
+        "role": "tertiary",
+        "displayName": "Masking Tape"
+      },
+      "stamp-green": {
+        "role": "tertiary",
+        "displayName": "Approval Green"
+      },
+      "stamp-red": {
+        "role": "tertiary",
+        "displayName": "Correction Red"
+      },
+      "danger": {
+        "role": "error",
+        "displayName": "Error"
+      },
+      "night-paper": {
+        "role": "neutral",
+        "displayName": "Lamp-lit Desk"
+      },
+      "night-sheet": {
+        "role": "neutral",
+        "displayName": "Night Sheet"
+      },
+      "night-shade": {
+        "role": "neutral",
+        "displayName": "Night Shade"
+      },
+      "night-ink": {
+        "role": "primary",
+        "displayName": "Chalk Ink"
+      },
+      "night-graphite": {
+        "role": "neutral",
+        "displayName": "Night Graphite"
+      },
+      "night-pencil": {
+        "role": "secondary",
+        "displayName": "Night Pencil"
+      },
+      "night-pen-blue": {
+        "role": "secondary",
+        "displayName": "Night Pen"
+      },
+      "night-photo-frame": {
+        "role": "neutral",
+        "displayName": "Photo Frame"
+      }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "Hero statement only, with the black-to-grey ink fade." },
-      "headline": { "displayName": "Headline", "purpose": "Section titles and spotlight titles." },
-      "title": { "displayName": "Title", "purpose": "Card headings." },
-      "body-lg": { "displayName": "Body large", "purpose": "About prose, section intros, FAQ." },
-      "body": { "displayName": "Body", "purpose": "Default text and buttons." },
-      "small": { "displayName": "Small", "purpose": "Nav, chips, eyebrows, card text, captions." },
-      "label": { "displayName": "Label", "purpose": "Uppercase kickers like \"Previously at\"." }
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero statement only, with the black-to-grey ink fade."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles and spotlight titles."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Card headings."
+      },
+      "body-lg": {
+        "displayName": "Body large",
+        "purpose": "About prose, section intros, FAQ."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default text and buttons."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Nav, chips, eyebrows, card text, captions."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase kickers like \"Previously at\"."
+      }
     },
     "shadows": [
-      { "name": "picked-up-card", "value": "0 16px 40px -24px rgba(18, 18, 18, 0.35)", "purpose": "Swipe-deck cards." },
-      { "name": "photo-on-desk", "value": "0 10px 24px -14px rgba(18, 18, 18, 0.45), 0 0 0 1px rgba(18, 18, 18, 0.09)", "purpose": "Taped polaroids." }
+      {
+        "name": "picked-up-card",
+        "value": "0 16px 40px -24px rgba(18, 18, 18, 0.35)",
+        "purpose": "Swipe-deck cards."
+      },
+      {
+        "name": "photo-on-desk",
+        "value": "0 10px 24px -14px rgba(18, 18, 18, 0.45), 0 0 0 1px rgba(18, 18, 18, 0.09)",
+        "purpose": "Taped polaroids."
+      }
     ],
     "motion": [
-      { "name": "ease", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "The single easing curve for every transition." },
-      { "name": "duration-state", "value": "300ms", "purpose": "Color, border and button state changes." },
-      { "name": "duration-move", "value": "500ms", "purpose": "Card lifts, menu, mosaic and polaroid movement." },
-      { "name": "duration-reveal", "value": "700ms", "purpose": "Scroll reveal: fade up 32px." },
-      { "name": "ink-write", "value": "1.6s cubic-bezier(0.6, 0.1, 0.3, 1)", "purpose": "Handwriting wipes in left to right via clip-path." }
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "The single easing curve for every transition."
+      },
+      {
+        "name": "duration-state",
+        "value": "300ms",
+        "purpose": "Color, border and button state changes."
+      },
+      {
+        "name": "duration-move",
+        "value": "500ms",
+        "purpose": "Card lifts, menu, mosaic and polaroid movement."
+      },
+      {
+        "name": "duration-reveal",
+        "value": "700ms",
+        "purpose": "Scroll reveal: fade up 32px."
+      },
+      {
+        "name": "ink-write",
+        "value": "1.6s cubic-bezier(0.6, 0.1, 0.3, 1)",
+        "purpose": "Handwriting wipes in left to right via clip-path."
+      }
     ],
     "breakpoints": [
-      { "name": "xs", "value": "400px" },
-      { "name": "mobile", "value": "768px" },
-      { "name": "tablet", "value": "1024px" },
-      { "name": "wide", "value": "1200px" }
+      {
+        "name": "xs",
+        "value": "400px"
+      },
+      {
+        "name": "mobile",
+        "value": "768px"
+      },
+      {
+        "name": "tablet",
+        "value": "1024px"
+      },
+      {
+        "name": "wide",
+        "value": "1200px"
+      }
     ]
   },
   "components": [
@@ -93,7 +257,7 @@
       "kind": "input",
       "refersTo": "input",
       "description": "Sheet wrapping a borderless textarea and the primary Ask button.",
-      "html": "<div class=\"ds-ask\"><textarea rows=\"2\" placeholder=\"Our factory data lives in 14 systems and nobody trusts the dashboards.\"></textarea><button>Ask</button></div>",
+      "html": "<div class=\"ds-ask\"><textarea rows=\"2\" placeholder=\"Have you scaled a team through hypergrowth?\"></textarea><button>Ask</button></div>",
       "css": ".ds-ask { display: flex; gap: 8px; align-items: flex-end; width: 520px; padding: 8px; background: #FFFFFF; border: 1px solid rgba(18, 18, 18, 0.09); border-radius: 16px; transition: border-color 300ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-ask:focus-within { border-color: rgba(18, 18, 18, 0.2); } .ds-ask textarea { flex: 1; resize: none; border: 0; outline: 0; background: transparent; color: #121212; font: 16px/24px Manrope, system-ui, sans-serif; padding: 8px; } .ds-ask textarea::placeholder { color: #6F6D67; } .ds-ask button { padding: 8px 12px; border-radius: 8px; border: 0; background: #121212; color: #FFFFFF; font: 600 16px/24px Manrope, system-ui, sans-serif; cursor: pointer; } .ds-ask button:hover { background: #2E2E2E; } .ds-ask button:focus-visible { outline: 2px solid #121212; outline-offset: 2px; }"
     },
     {
@@ -113,7 +277,7 @@
   ],
   "narrative": {
     "northStar": "The Desk Notebook",
-    "overview": "A working notebook left open on a desk: warm white pages, near-black ink, and the owner's own hand all over it. The printed layer is calm and precise: one Manrope family, a centered single column, generous vertical air, hairline rules. The personal layer sits on top of it: margin notes in pen blue with hand-drawn arrows, a signature that writes itself in, polaroids held on with strips of yellow tape. The two layers never blur. Type and layout stay disciplined so the handwritten artifacts read as genuine asides from a person, not decoration.\n\nDensity is low and the rhythm is vertical. Every block sits on the center axis, sections breathe on 96px of padding, and color is almost absent: ink, graphite and pencil greys on paper, with pen blue as the only true hue in the system. Depth comes from paper itself: sheets with hairline borders, and real shadows only on physical objects such as a polaroid or a card you can pick up and swipe.\n\nLight is the only theme today. A dark theme is planned but not designed; see Colors.",
+    "overview": "A working notebook left open on a desk: warm white pages, near-black ink, and the owner's own hand all over it. The printed layer is calm and precise: one Manrope family, a centered single column, generous vertical air, hairline rules. The personal layer sits on top of it: margin notes in pen blue with hand-drawn arrows, a signature that writes itself in, polaroids held on with strips of yellow tape. The two layers never blur. Type and layout stay disciplined so the handwritten artifacts read as genuine asides from a person, not decoration.\n\nDensity is low and the rhythm is vertical. Every block sits on the center axis, sections breathe on 96px of padding, and color is almost absent: ink, graphite and pencil greys on paper, with pen blue as the only true hue in the system. Depth comes from paper itself: sheets with hairline borders, and real shadows only on physical objects such as a polaroid or a card you can pick up and swipe.\n\nAt night the same notebook sits under a lamp: a dark theme follows the system setting, with paper and ink swapped and pen blue still the only hue (see Colors).",
     "keyCharacteristics": [
       "Warm white paper, near-black ink, one blue pen.",
       "One typeface (Manrope 400/500/600), tight negative tracking on large headings.",
@@ -123,12 +287,36 @@
       "Calm, eased motion (one curve) that wipes, lifts and reveals; all of it respects reduced motion."
     ],
     "rules": [
-      { "name": "The One Pen Rule", "body": "Pen blue belongs to the handwriting. If it isn't written by hand, it isn't blue.", "section": "colors" },
-      { "name": "The Ink Is the Accent Rule", "body": "No brand color for buttons or links. Emphasis comes from ink weight and contrast, not hue.", "section": "colors" },
-      { "name": "Dark Mode Is Open", "body": "A dark theme is planned but undecided. When it lands it must redefine these same token names on [data-theme=\"dark\"] and keep the notebook metaphor (ink and paper inverted, pen still the only hue). Until then, don't hand-tune one-off dark values.", "section": "colors" },
-      { "name": "The One Family Rule", "body": "Manrope only, weights 400, 500 and 600. Never 700+, never a second webfont. Contrast comes from the hand, not a display face.", "section": "typography" },
-      { "name": "The Balanced Line Rule", "body": "Headings use text-wrap: balance; paragraphs use text-wrap: pretty.", "section": "typography" },
-      { "name": "The Objects Cast Shadows Rule", "body": "Only things you could pick up off a desk get a shadow. Interface surfaces stay flat and use rules.", "section": "elevation" }
+      {
+        "name": "The One Pen Rule",
+        "body": "Pen blue belongs to the handwriting. If it isn't written by hand, it isn't blue.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ink Is the Accent Rule",
+        "body": "No brand color for buttons or links. Emphasis comes from ink weight and contrast, not hue.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Family Rule",
+        "body": "Manrope only, weights 400, 500 and 600. Never 700+, never a second webfont. Contrast comes from the hand, not a display face.",
+        "section": "typography"
+      },
+      {
+        "name": "The Balanced Line Rule",
+        "body": "Headings use text-wrap: balance; paragraphs use text-wrap: pretty.",
+        "section": "typography"
+      },
+      {
+        "name": "The Objects Cast Shadows Rule",
+        "body": "Only things you could pick up off a desk get a shadow. Interface surfaces stay flat and use rules.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Same Names Rule",
+        "body": "Themes only redefine tokens. If a component needs a colour, it gets a token first, so the night desk can't drift from the day.",
+        "section": "colors"
+      }
     ],
     "dos": [
       "Do keep pen blue (#2F56C4) for handwriting, arrows and polaroid captions only.",
@@ -144,7 +332,8 @@
       "Don't load a second typeface or use Manrope above 600.",
       "Don't fake handwriting with a script font; use real handwriting assets.",
       "Don't left-align a section in isolation; the composition is centered throughout.",
-      "Don't ship one-off dark-mode colors before the dark theme is designed."
+      "Don't give a component its own dark-mode colours; add or reuse a token that both themes define.",
+      "Don't put a small label (eyebrow) above a heading; the heading carries its own weight."
     ]
   }
 }

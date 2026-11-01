@@ -12,4 +12,4 @@ namespace_id = "1001"
 simple = { limit = 10, period = 60 }
 
 [vars]
-ALLOWED_ORIGINS = "https://djui.github.io,http://localhost:4173"
+ALLOWED_ORIGINS = "https://uwe.social,https://djui.github.io,http://localhost:4173"

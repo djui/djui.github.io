@@ -1,6 +1,6 @@
 # Ask Uwe
 
-A Cloudflare Worker behind the "Ask" box on djui.github.io. It answers a visitor's question with Claude Haiku, using only `src/context.md`, and keeps the API key off the page.
+A Cloudflare Worker behind the "Ask" box on uwe.social. It answers a visitor's question with Claude Haiku, using only `src/context.md`, and keeps the API key off the page.
 
 ## Deploy
 
@@ -24,4 +24,4 @@ Edit `src/context.md` and run `npx wrangler deploy` again. Keep it to facts that
 
 - 10 questions per minute per visitor IP (`wrangler.toml`).
 - Questions are cut at 500 characters; answers are at most 3 sentences.
-- Only requests from djui.github.io and localhost:4173 are accepted.
+- Only requests from uwe.social, djui.github.io, and localhost:4173 are accepted.

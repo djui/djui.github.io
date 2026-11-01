@@ -24,7 +24,7 @@ export default {
     const origin = request.headers.get("origin") || "";
     const allowed = env.ALLOWED_ORIGINS.split(",").includes(origin);
     const cors = {
-      "access-control-allow-origin": allowed ? origin : "https://djui.github.io",
+      "access-control-allow-origin": allowed ? origin : "https://uwe.social",
       "access-control-allow-methods": "POST, OPTIONS",
       "access-control-allow-headers": "content-type",
       vary: "origin",
